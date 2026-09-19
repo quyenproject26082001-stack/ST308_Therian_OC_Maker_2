@@ -1,0 +1,22 @@
+# Claude Code
+.claude/
+
+# Android build
+build/
+app/build/
+app/release/
+*.apk
+*.aab
+*.aar
+
+# Gradle
+
+
+# Local config (contains SDK paths, secrets)
+app/key/*.jks
+
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

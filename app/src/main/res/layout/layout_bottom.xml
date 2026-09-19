@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:paddingBottom="22dp"
+    tool:background="@color/dark"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/lnlShareButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+
+
+
+        <!--            btnRight-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btnRight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:padding="2dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:scaleType="fitXY"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/transparent"
+
+                app:strokeColor="@color/transparent"
+                app:layout_constraintBottom_toBottomOf="@+id/lnlInLeft"
+                app:layout_constraintEnd_toEndOf="@+id/lnlInLeft"
+                app:layout_constraintStart_toStartOf="@+id/lnlInLeft"
+                app:layout_constraintTop_toTopOf="@+id/lnlInLeft">
+
+                <ImageView
+                    android:id="@+id/imgBgBtnRight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/bg_btn_whatsapp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--                        lnlInLeft-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lnlInLeft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_whatsapp" />
+
+                <!--                        tvWhatsapp-->
+                <TextView
+                    android:id="@+id/tvWhatsapp"
+                    style="@style/single_marquee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+                    android:fontFamily="@font/baloo_2_bold"
+                    android:text="@string/add_to_whatsapp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--            btnLeft-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btnLeft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:padding="2dp">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:scaleType="fitXY"
+                app:strokeColor="@color/transparent"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/transparent"
+                app:layout_constraintBottom_toBottomOf="@+id/lnlInRight"
+                app:layout_constraintEnd_toEndOf="@+id/lnlInRight"
+                app:layout_constraintStart_toStartOf="@+id/lnlInRight"
+                app:layout_constraintTop_toTopOf="@+id/lnlInRight">
+
+                <ImageView
+                    android:id="@+id/imgBgBtnLeft"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/bg_btn_telegram" />
+            </FrameLayout>
+
+            <!--                        lnlInRight-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lnlInRight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_telegram" />
+
+                <!--                        tvTelegram-->
+                <TextView
+                    android:id="@+id/tvTelegram"
+                    style="@style/single_marquee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+                    android:fontFamily="@font/baloo_2_bold"
+                    android:text="@string/add_to_telegram"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+  
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app"
+    tools:context=".ui.view.ViewActivity">
+
+
+    <!-- layoutActionBar -->
+    <FrameLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/actionBar"
+            layout="@layout/layout_actionbar" />
+    </FrameLayout>
+
+    <!--    cvImage-->
+    <FrameLayout
+        android:id="@+id/cvImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="0dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="visible"
+        android:layout_marginTop="6dp"
+        app:strokeWidth="2dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@id/lnlBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutActionBar"
+        app:strokeColor="#861629"
+        app:cardCornerRadius="4dp"
+        >
+
+        <!--        imvImage-->
+        <ImageView
+            android:id="@+id/imvImage"
+            android:padding="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center" />
+    </FrameLayout>
+
+
+
+    <!--    lnlBottom-->
+    <FrameLayout
+        android:id="@+id/lnlBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="0dp"
+        android:visibility="visible"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="62dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <include
+            android:id="@+id/includeLayoutBottom"
+            layout="@layout/layout_bottom_view" />
+
+    </FrameLayout>
+
+
+<!--    &lt;!&ndash;    flNativeCollab&ndash;&gt;-->
+<!--    <FrameLayout-->
+<!--        android:id="@+id/flNativeCollab"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent">-->
+
+<!--        <include layout="@layout/ads_shimmer_collap_native" />-->
+<!--    </FrameLayout>-->
+
+
+<!--    &lt;!&ndash;    native_ads&ndash;&gt;-->
+<!--    <FrameLayout-->
+<!--        android:id="@+id/native_ads"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent">-->
+
+<!--        <include layout="@layout/ads_native_big_btn_top_shimmer" />-->
+<!--    </FrameLayout>-->
+
+    <!--    flNativeCollab-->
+    <FrameLayout
+        android:id="@+id/flNativeCollab"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <include layout="@layout/ads_shimmer_collap_native" />
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

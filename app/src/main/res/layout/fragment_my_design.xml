@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_down"
+    android:layout_height="match_parent"
+    android:paddingTop="0dp"
+    android:clipToPadding="true"
+    tools:context=".ui.my_creation.fragment.MyDesignFragment">
+
+    <!--    rcvMyDesign-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvMyDesign"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="4dp"
+        android:clipChildren="false"
+        android:layout_marginTop="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/item_my_design" />
+
+    <!-- No Item-->
+    <LinearLayout
+        android:id="@+id/layoutNoItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutActionBar">
+
+        <ImageView
+            android:layout_width="164dp"
+            android:layout_height="180dp"
+            android:visibility="gone"
+            android:adjustViewBounds="true"
+            android:src="@drawable/img_no_item" />
+
+        <TextView
+            android:id="@+id/tvNoitem"
+
+            style="@style/single_marquee"
+            android:layout_width="196dp"
+            android:layout_height="37dp"
+            android:fontFamily="@font/baloo_2_bold"
+            android:gravity="center"
+            android:paddingHorizontal="33dp"
+            android:text="@string/no_item_here"
+            android:textColor="@color/app"
+            android:textSize="16sp"
+            android:translationY="0dp" />
+    </LinearLayout>
+
+</FrameLayout>

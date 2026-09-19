@@ -1,0 +1,149 @@
+<resources>
+
+    <string name="app_name" translatable="false">ST308_Therian_OC_Maker_2</string>
+
+
+    <string name="go_to_setting_message">The app needs this permission</string>
+    <string name="settings">Settings</string>
+    <string name="this_action_can_contain_ads">This action can contain ads</string>
+    <string name="not_select_lang">Please select a language</string>
+    <string name="next">Next</string>
+    <string name="language"> Language </string>
+
+    <string name="title_1">Awaken Your Inner Spirit</string>
+    <string name="title_2">Customize Every Detail</string>
+    <string name="title_3">Craft Your Mystical Identity</string>
+
+    <string name="permission">Permission</string>
+    <string name="storage">\u00A0\u00A0Storage\u00A0\u00A0</string>
+    <string name="continue_per">Continue</string>
+    <string name="notification">\u00A0\u00A0Notification\u00A0\u00A0</string>
+    <string name="no_internet">No Internet</string>
+    <string name="granted_notification">Notification permission granted</string>
+    <string name="granted_storage">Storage permission granted</string>
+    <string name="allow">Allow</string>
+    <string name="to_access">to access photos, media and files on your device</string>
+    <string name="to_access_13">to access photos, media and files on your device</string>
+
+    <string name="rate_us">\u00A0\u00A0Rate us\u00A0\u00A0</string>
+    <string name="share_app">\u00A0\u00A0Share app\u00A0\u00A0</string>
+    <string name="privacy_policy"><![CDATA[\u00A0\u00A0Privacy & Policy\u00A0\u00A0]]></string>
+
+    <string name="zero_star_title">Do you like the app?</string>
+    <string name="zero_star">Let us know your experience</string>
+
+    <string name="one_star_title">Oh, no!</string>
+    <string name="one_star">Please give us some feedback</string>
+
+    <string name="two_star_title">Oh, no!</string>
+    <string name="two_star">Please give us some feedback</string>
+
+    <string name="three_star_title">Oh, no!</string>
+    <string name="three_star">Please give us some feedback</string>
+
+    <string name="four_star_title">We love you too!</string>
+    <string name="four_star">Thanks for your feedback</string>
+
+    <string name="five_star_title">We love you too!</string>
+    <string name="five_star">Thanks for your feedback</string>
+
+    <string name="rate_us_0">You have not rated it yet!</string>
+    <string name="rate">Rate</string>
+    <string name="exit">Exit</string>
+    <string name="have_rated">Thank you for rate our app</string>
+    <string name="share">Share</string>
+    <string name="delete">Delete</string>
+    <string name="download">Download</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">Ok</string>
+    <string name="wait_a_minute">Please wait...</string>
+    <string name="reset">Reset</string>
+    <string name="download_success">Download successful to the ST308_Therian_OC_Maker_2 album</string>
+    <string name="please_check_your_internet">Please check your internet</string>
+    <string name="please_select_an_image">Please select an image</string>
+    <string name="error">Error</string>
+    <string name="an_error_occurred">An error occurred, please try again later.</string>
+    <string name="character_no_longer_available">This character is no longer available and cannot be edited.</string>
+    <string name="image_has_been_saved_successfully">The project has been saved successfully!</string>
+    <string name="save">Save</string>
+    <string name="are_you_sure_want_to_delete_this_item">Are you sure want to delete this item?</string>
+    <string name="downloading">Downloading...</string>
+    <string name="successfully">Successful</string>
+    <string name="successfully1">Successfully</string>
+    <string name="download_failed_please_try_again_later">Download failed, please try again later!</string>
+    <string name="save_failed_please_try_again">Save failed, please try again!</string>
+    <string name="delete_failed_please_try_again">Delete failed, please try again!</string>
+    <string name="my_creation">My Creation</string>
+    <string name="delete_your_customize">Delete your customize</string>
+    <string name="are_you_sure_you_want_to_delete_the_image">Are you sure you want to delete the image?</string>
+    <string name="haven_t_saved_it_yet_do_you_want_to_exit">Haven’t saved it yet, are you sure to exit?</string>
+    <string name="change_your_whole_design_are_you_sure">Do you want to reset all?</string>
+    <string name="character_maker">Pixel Maker</string>
+    <string name="no_item_here">No Item Here</string>
+    <string name="quick_maker">Quick Maker</string>
+    <string name="my_character">My Pixel</string>
+    <string name="category">Category</string>
+
+    <string name="add_to_whatsapp">Add To WhatsApp</string>
+    <string name="add_to_telegram">Add To Telegram</string>
+    <string name="my_avatar">My Avatar</string>
+    <string name="my_design">My Design</string>
+    <string name="my_album">My album</string>
+    <string name="no_app_found_to_handle_this_action">No app found to handle this action</string>
+    <string name="invalid_action_msg">Application not installed</string>
+    <string name="invalid_action">Error</string>
+    <string name="limit_3_items">At least 3 items are required to create a sticker</string>
+    <string name="limit_30_items">Only a maximum of 30 items can be added</string>
+    <string name="create_package_name">Create Package Name</string>
+    <string name="enter_your_package_name">Enter your package name</string>
+    <string name="please_enter_your_package_name">Please enter your package name!</string>
+    <string name="background">Background</string>
+    <string name="image">Image</string>
+    <string name="color">Color</string>
+    <string name="add_image">Add image</string>
+    <string name="sticker">Sticker</string>
+    <string name="speech_bubbles">Speech Bubbles</string>
+    <string name="text">Text</string>
+    <string name="type_your_content">Type your content...</string>
+    <string name="font">Font</string>
+    <string name="choose_color">Choose Color</string>
+    <string name="done">Done</string>
+    <string name="null_edt">Please enter text</string>
+    <string name="input_text">Input text</string>
+    <string name="hello_world">Type your content...</string>
+    <string name="loading">Loading</string>
+    <string name="internet_required_for_more_characters">Internet required for more characters</string>
+    <string name="my_work">My Work</string>
+    <string name="do_you_want_to_exit">Haven’t saved it yet, do you want \nto exit?</string>
+    <string name="generate">Random</string>
+    <string name="play">Therian Maker</string>
+    <string name="tv_cosplay">\u00A0\u00A0COSPLAY AVATAR\u00A0</string>
+    <string name="random">\u00A0\u00A0Random\u00A0\u00A0</string>
+    <string name="avatar_random">\u00A0\u00A0AVATAR RANDOM\u00A0\u00A0</string>
+    <string name="creation">\u00A0\u00A0My Creation\u00A0\u00A0</string>
+    <string name="back">BACK</string>
+    <string name="hello_world_hint">Type your content...</string>
+    <string name="character">My Therian</string>
+    <string name="edit">Edit</string>
+    <string name="click_the_random_button_below_to_see_what_your_character_is">Click the random button below to see what your character is!</string>
+    <string name="next_intro">Next</string>
+    <string name="color_text">Color</string>
+    <string name="playcos">\u00A0\u00A0Cosplay\u00A0\u00A0</string>
+    <string name="try_again">Try again</string>
+    <string name="instruction">Instruction</string>
+    <string name="stop">STOP</string>
+    <string name="cancel">Cancel</string>
+    <string name="image_has_been_saved_successful">Image has been saved successfully!</string>
+    <string name="cosplay">Cosplay Therian</string>
+    <string name="guide_cosplay">Cosplay Mode, players are randomly given one reference image to follow. Your task is to recreate that character as accurately as possible by choosing the right hairstyles, outfits, colors, and accessories. Every correct match increases your percentage score (%). The closer your character looks to the random image, the higher your final score will be. Pay attention to small details to achieve the best cosplay result.</string>
+    <string name="cosplay_therian">Cosplay Therian</string>
+    <string name="therian_random">Therian Random</string>
+    <string name="facebook_share">Facebook Share</string>
+    <string name="instagram_share">Instagram Share</string>
+    <string name="size">Size</string>
+    <string name="cosplay_results">Cosplay Results</string>
+    <string name="your_cosplay_score">Your Cosplay Score</string>
+    <string name="_100_match">100% Match</string>
+
+</resources>

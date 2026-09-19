@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="1.5dp"
+    app:layout_constraintDimensionRatio="1:1">
+
+
+    <!--        vFocus-->
+    <View
+        android:id="@+id/vFocus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <FrameLayout
+        android:id="@+id/cardLayerItem"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@drawable/layer_slt">
+
+        <!--                    imvImage-->
+        <ImageView
+            android:id="@+id/imvImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToOutline="true"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:src="@color/red_BA" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/sflShimmer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:shimmer_auto_start="true"
+            app:shimmer_base_alpha="0.7"
+            app:shimmer_direction="left_to_right"
+            app:shimmer_duration="1800"
+            app:shimmer_highlight_alpha="0.6"
+            app:shimmer_shape="linear">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_rounded_8_gray" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <!--            btnNone-->
+        <ImageView
+            android:id="@+id/btnNone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="15dp"
+
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_none"
+            android:translationY="-2dp"
+            android:visibility="gone" />
+
+        <!--            btnRandom-->
+        <ImageView
+            android:id="@+id/btnRandom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_random_layer"
+            android:tint="@color/figma_primary"
+            android:translationY="-2dp"
+            android:visibility="gone" />
+
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

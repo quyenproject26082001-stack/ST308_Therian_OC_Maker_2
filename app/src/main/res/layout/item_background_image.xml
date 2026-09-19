@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="6:6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/containerCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4.5dp"
+            app:cardBackgroundColor="@color/transparent"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/app"
+            app:strokeWidth="3dp"
+
+            >
+
+            <!--            imvImage-->
+            <ImageView
+                android:id="@+id/imvImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <!--            imvImage-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnNone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="4dp"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_none"
+                    app:tint="@color/figma_primary" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+            <!--            lnlAddItem-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lnlAddItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                tools:visibility="gone"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:padding="15dp"
+                    android:layout_marginTop="-8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_add_image"
+                    android:tint="@color/figma_primary" />
+
+
+                <TextView
+                    android:id="@+id/tvAddImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo_2_bold"
+                    android:gravity="center"
+                    android:text="@string/add_image"
+                    android:textColor="@color/figma_primary"
+                    android:textSize="10sp"
+                    style="@style/single_marquee"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias=".98" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

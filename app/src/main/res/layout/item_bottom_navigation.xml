@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
+    android:layout_marginHorizontal="4dp"
+    android:clipChildren="false"
+    android:layout_gravity="center_vertical"
+    android:clipToPadding="false">
+
+    <!--    cvContent-->
+    <FrameLayout
+        android:id="@+id/cvContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_select_navi_shape"
+        android:clipChildren="true"
+        android:clipToPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <!--            imvImage-->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/transparent"
+            app:cardCornerRadius="4dp"
+            android:layout_margin="2dp"
+            app:strokeColor="@color/transparent">
+
+            <ImageView
+                android:id="@+id/imvImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="0dp"
+                tools:src="@color/dark"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop" />
+
+            <com.therian.oc.aaa.core.custom.imageview.ShapeClipImageView
+                android:id="@+id/imvImageBG"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="0dp"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop" />
+            <!--            imvImage-->
+        </com.google.android.material.card.MaterialCardView>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

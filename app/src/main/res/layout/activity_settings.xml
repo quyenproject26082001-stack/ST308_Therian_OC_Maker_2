@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.therian.oc.aaa.ui.SettingsActivity">
+
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_app" />
+
+    <FrameLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/actionBar"
+            layout="@layout/layout_actionbar" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutActionBar">
+
+        <LinearLayout
+            android:id="@+id/btnLang"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_setting_item_v2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_lang_set"
+                android:tint="@color/figma_primary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/baloo_2_bold"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:text="@string/language"
+                android:textColor="@color/figma_primary"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnRate"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_setting_item_v2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_rate_set"
+                android:tint="@color/figma_primary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/baloo_2_bold"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:text="@string/rate_us"
+                android:textColor="@color/figma_primary"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnShareApp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_setting_item_v2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_share_set"
+                android:tint="@color/figma_primary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/baloo_2_bold"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:text="@string/share_app"
+                android:textColor="@color/figma_primary"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnPolicy"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_setting_item_v2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_policy_set"
+                android:tint="@color/figma_primary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/baloo_2_bold"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:text="@string/privacy_policy"
+                android:textColor="@color/figma_primary"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

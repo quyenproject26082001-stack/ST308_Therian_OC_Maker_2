@@ -1,0 +1,267 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    id 'org.jetbrains.kotlin.kapt'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+//def env = System.getenv("BUILD_ENV")
+//def isProd = env == "production"
+//
+//println("BUILD_ENV = " + env)
+
+def adKeys = [
+        "app_id",
+        "inter_splash",
+        "inter_all",
+        "native_language",
+        "native_intro",
+        "native_per",
+        "inter_per",
+        "native_cl_home",
+        "native_cl_category",
+        "native_category",
+        "native_cl_custom",
+        "native_cl_bg",
+        "native_success",
+        "native_cl_cosplay",
+        "native_cl_cosplayPlay",
+        "native_cl_cosplayDone",
+        "native_cl_random",
+        "native_cl_creation",
+        "native_creation",
+        "native_cl_detail",
+        "open_resume",
+        "native_all"
+]
+
+def testAds = [
+
+//        app_id               : "",
+//        inter_splash         : "",
+//        inter_all            : "",
+//        native_language      : "",
+//        native_intro         : "",
+//        native_per           : "",
+//        inter_per            : "",
+//        native_cl_home       : "",
+//        native_cl_category   : "",
+//        native_category      : "",
+//        native_cl_custom     : "",
+//        native_cl_bg         : "",
+//        native_success       : "",
+//        native_cl_cosplay    : "",
+//        native_cl_cosplayPlay: "",
+//        native_cl_cosplayDone: "",
+//        native_cl_random     : "",
+//        native_cl_creation   : "",
+//        native_creation      : "",
+//        native_cl_detail     : "",
+//        open_resume          : "",
+//        native_all           : "",
+
+]
+
+def realAds = [
+//        app_id               : "ca-app-pub-9384003223514230~7135238263",
+//        inter_splash         : "ca-app-pub-9384003223514230/9224931120",
+//        inter_all            : "ca-app-pub-9384003223514230/5349251985",
+//        native_language      : "ca-app-pub-9384003223514230/4171901681",
+//        native_intro         : "ca-app-pub-9384003223514230/8714841411",
+//        native_per           : "ca-app-pub-9384003223514230/5401222875",
+//        inter_per            : "ca-app-pub-9384003223514230/8191051056",
+//        native_cl_home       : "ca-app-pub-9384003223514230/8813867584",
+//        native_cl_category   : "ca-app-pub-9384003223514230/2476736128",
+//        native_category      : "ca-app-pub-9384003223514230/5564887711",
+//        native_cl_custom     : "ca-app-pub-9384003223514230/9912373016",
+//        native_cl_bg         : "ca-app-pub-9384003223514230/7400700253",
+//        native_success       : "ca-app-pub-9384003223514230/4199821845",
+//        native_cl_cosplay    : "ca-app-pub-9384003223514230/7777164260",
+//        native_cl_cosplayPlay: "ca-app-pub-9384003223514230/5389627899",
+//        native_cl_cosplayDone: "ca-app-pub-9384003223514230/6383132050",
+//        native_cl_random     : "ca-app-pub-9384003223514230/8274798223",
+//        native_cl_creation   : "ca-app-pub-9384003223514230/7947495168",
+//        native_creation      : "ca-app-pub-9384003223514230/7504642030",
+//        native_cl_detail     : "ca-app-pub-9384003223514230/4407718714",
+//        open_resume          : "ca-app-pub-9384003223514230/6634413495",
+//        native_all           : "ca-app-pub-9384003223514230/9468473703"
+
+]
+
+android {
+    namespace 'com.therian.oc.aaa'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.therian.oc.aaa"
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        def formattedDate = new Date().format('MM.dd.yyyy')
+        archivesBaseName = "ST308_Therian_OC_Maker_2_v${versionName}_${formattedDate}"
+
+    }
+//    signingConfigs {
+//        release {
+//            def keyDir = file('key')
+//
+//            def keystoreFile = keyDir.listFiles()?.find { it.isFile() }
+//
+//            if (keystoreFile != null) {
+//                storeFile keystoreFile
+//                storePassword "lvtapp@123"
+//                keyAlias "keystore"
+//                keyPassword "lvtapp@123"
+//            }
+//        }
+//    }
+
+    buildTypes {
+//        debug {
+//            adKeys.each { key ->
+//                def value = testAds[key]
+//
+//                if (value == null) {
+//                    throw new GradleException("❌ Missing ads key: " + key)
+//                }
+//
+//                resValue "string", key, value
+//            }
+//        }
+
+        release {
+            minifyEnabled true
+            shrinkResources true
+//            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+//            adKeys.each { key ->
+//                def value = isProd ? realAds[key] : testAds[key]
+//
+//                if (value == null) {
+//                    throw new GradleException("❌ Missing ads key: " + key)
+//                }
+//
+//                resValue "string", key, value
+//            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    dataBinding {
+        enabled true
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            enableSplit = true
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+
+
+    // review app
+    implementation("com.google.android.play:review-ktx:2.0.2")
+    // required to avoid crash on Android 12 API 31
+    implementation 'androidx.work:work-runtime-ktx:2.11.0'
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:5.0.5'
+    // Blur Glide
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+    // dots
+    implementation("com.tbuonomo:dotsindicator:5.1.0")
+    // CardView
+    implementation "androidx.cardview:cardview:1.0.0"
+    // rate
+    implementation 'com.github.ome450901:SimpleRatingBar:1.5.1'
+    // Lottie Animation
+    implementation 'com.airbnb.android:lottie:6.7.1'
+    // Shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    // EventBus
+    implementation 'org.greenrobot:eventbus:3.3.1'
+    // kotlin coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
+    // Convert JSON
+    implementation 'com.squareup.retrofit2:converter-gson:3.0.0'
+    // Gson
+    implementation 'com.google.code.gson:gson:2.13.2'
+    // Vát cạnh
+    implementation 'com.google.android.material:material:1.13.0'
+    // API
+    implementation retrofit_lib
+    implementation okhttp_lib
+    // Room
+    implementation "androidx.room:room-runtime:2.8.4"
+    implementation "androidx.room:room-ktx:2.8.4"
+    kapt "androidx.room:room-compiler:2.8.4"
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.4"
+    // Fragment viewmodel
+    implementation "androidx.fragment:fragment-ktx:1.8.9"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.9.4"
+    //Lifecycle runtime (nếu dùng lifecycleScope)
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.9.4"
+    // ExoPlayer
+    implementation 'androidx.media3:media3-exoplayer:1.8.0'
+    // UI PlayerView
+    implementation 'androidx.media3:media3-ui:1.8.0'
+    // swiperefreshlayout
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    //pick color
+    implementation 'com.github.Mohammad3125:KavehColorPicker:v1.0.0'
+
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-messaging:23.3.1'
+    implementation 'com.google.firebase:firebase-config:21.5.0'
+    //ads
+    implementation 'com.github.LVTapp:AdsLibrary:1.5.5'
+    implementation 'com.google.android.gms:play-services-ads:24.8.0'
+    implementation 'com.google.ads.mediation:facebook:6.21.0.0'
+    //implementation 'com.google.ads.mediation:vungle:7.6.1.0'
+    implementation 'com.google.ads.mediation:applovin:13.5.1.0'
+    implementation 'com.google.ads.mediation:pangle:7.7.0.2.0'
+    implementation 'com.google.ads.mediation:ironsource:9.1.0.0'
+    implementation 'com.unity3d.ads:unity-ads:4.16.4'
+    implementation 'com.google.ads.mediation:unity:4.16.4.0'
+    implementation 'com.google.ads.mediation:mintegral:17.0.31.0'
+}

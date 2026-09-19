@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="22dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/lnlShareButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnFBShare"
+        >
+
+        <!--            btnWhatsapp-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btnWhatsapp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:scaleType="fitXY"
+                app:cardBackgroundColor="@color/transparent"
+
+                app:layout_constraintBottom_toBottomOf="@+id/lnlInLeft"
+
+                app:layout_constraintEnd_toEndOf="@+id/lnlInLeft"
+                app:layout_constraintStart_toStartOf="@+id/lnlInLeft"
+                app:layout_constraintTop_toTopOf="@+id/lnlInLeft"
+                app:strokeColor="@color/transparent">
+
+                <ImageView
+                    android:id="@+id/imgBgBtnWhatsapp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/bg_view_btn" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--                        lnlInLeft-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lnlInLeft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <!--                        tvDelete-->
+                <TextView
+                    android:id="@+id/tvShare"
+                    style="@style/single_marquee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginHorizontal="6dp"
+                    android:fontFamily="@font/baloo_2_bold"
+                    android:text="@string/share"
+                    android:textColor="@color/app"
+                    android:textSize="18sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--            btnTelegram-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btnTelegram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+           >
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:scaleType="fitXY"
+                app:cardBackgroundColor="@color/transparent"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp"
+
+                app:layout_constraintBottom_toBottomOf="@+id/lnlInRight"
+                app:layout_constraintEnd_toEndOf="@+id/lnlInRight"
+                app:layout_constraintStart_toStartOf="@+id/lnlInRight"
+                app:layout_constraintTop_toTopOf="@+id/lnlInRight"
+                app:strokeColor="@color/transparent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/bg_view_btn" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--                        lnlInRight-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lnlInRight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <!--                        tvDownload-->
+                <TextView
+                    android:id="@+id/tvDownload"
+                    style="@style/single_marquee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/baloo_2_bold"
+                    android:text="@string/download"
+                    android:textColor="@color/app"
+                    android:textSize="18sp"
+              />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:id="@+id/btnFBShare"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/GLCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/frame_facebook"
+        >
+        <ImageView
+            android:id="@+id/icFb"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_fb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="10dp"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/facebook_share"
+            android:fontFamily="@font/baloo_2_bold"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:gravity="center"
+style="@style/single_marquee"
+            android:id="@+id/tvFB"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icFb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:includeFontPadding="true"/>
+
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:id="@+id/btnInstagram"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/GLCenter"
+        android:background="@drawable/frame_inst"
+        >
+        <ImageView
+            android:id="@+id/icIst"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_inst"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="10dp"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/instagram_share"
+            android:fontFamily="@font/baloo_2_bold"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:gravity="center"
+            style="@style/single_marquee"
+
+            android:id="@+id/tvIns"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icIst"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:includeFontPadding="true"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/GLCenter"
+        app:layout_constraintGuide_percent="0.5"
+        android:orientation="vertical"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

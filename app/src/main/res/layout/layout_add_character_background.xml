@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/bg_bg" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sectionTab"
+        android:layout_width="264dp"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="13dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/tab_bg_slt"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <!--                btnBackgroundImage-->
+        <FrameLayout
+            android:id="@+id/btnBackgroundImage"
+            android:layout_width="0dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnBackgroundColor"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+
+            <!--                tvBackgroundImage-->
+            <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
+                android:id="@+id/tvBackgroundImage"
+                style="@style/single_marquee"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/baloo_2_bold"
+                android:gravity="center"
+                android:letterSpacing="0.05"
+                android:text="@string/image"
+
+                android:textColor="@color/figma_primary"
+                android:textSize="18sp" />
+
+        </FrameLayout>
+
+        <!--                btnBackgroundColor-->
+        <FrameLayout
+            android:id="@+id/btnBackgroundColor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/btnBackgroundImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_weight="1">
+
+
+            <!--                tvBackgroundColor-->
+            <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
+                android:id="@+id/tvBackgroundColor"
+                style="@style/single_marquee"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/baloo_2_bold"
+                android:gravity="center"
+                android:letterSpacing="0.05"
+                android:text="@string/color"
+                android:textColor="@color/figma_primary"
+                android:textSize="18sp" />
+
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--        lnlBackground-->
+    <LinearLayout
+        android:id="@+id/lnlBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="62dp"
+        android:layout_marginBottom="25dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+
+        <!--            rcvBackgroundImage-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvBackgroundImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4.5dp"
+            android:clipToPadding="false"
+            android:paddingHorizontal="7.5dp"
+            android:paddingBottom="60dp"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="5"
+
+            tools:itemCount="10"
+            tools:listitem="@layout/item_background_image"
+            tools:visibility="gone" />
+
+        <!--            rcvBackgroundColor-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvBackgroundColor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4.5dp"
+            android:clipToPadding="false"
+            android:paddingHorizontal="7.5dp"
+            android:paddingBottom="60dp"
+            android:visibility="gone"
+
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="5"
+            tools:itemCount="10"
+            tools:listitem="@layout/item_background_color"
+            tools:visibility="visible" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

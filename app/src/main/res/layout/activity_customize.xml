@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DEDAFF"
+    tools:context=".ui.customize.CustomizeCharacterActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#A1CCEF"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@id/glHorizontal" />
+
+    <!-- layoutActionBar -->
+    <FrameLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/actionBar"
+            layout="@layout/layout_actionbar" />
+    </FrameLayout>
+
+    <!-- Layout Image Layer -->
+    <FrameLayout
+        android:id="@+id/layoutCustomLayerBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/containerBtnSamplePhoto"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutActionBar"
+        app:layout_constraintVertical_bias="0" />
+
+    <!-- Layout Image Layer -->
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toTopOf="@id/glHorizontal"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutActionBar"
+        app:layout_constraintVertical_bias="0">
+
+        <FrameLayout
+            android:id="@+id/layoutCustomLayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <!--    glHorizontal-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <!--    btnFlip-->
+    <ImageView
+        android:id="@+id/btnFlip"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_flip"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutActionBar" />
+
+    <!--    btnHide-->
+    <ImageView
+        android:id="@+id/btnHide"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_show"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFlip" />
+
+
+    <TextView
+        android:id="@+id/btnMan"
+        android:layout_width="64dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="6dp"
+        android:background="@drawable/selector_btn_man"
+        android:elevation="1dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutCustomLayerBackground" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:visibility="gone"
+        app:cardCornerRadius="28dp"
+        app:layout_constraintBottom_toBottomOf="@+id/containerBtnSamplePhoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/containerBtnSamplePhoto"
+        app:strokeColor="#861629"
+
+
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toTopOf="@id/bg_cus"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@color/dark" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/containerBtnSamplePhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:cardCornerRadius="4dp"
+        app:layout_constraintBottom_toTopOf="@id/bg_cus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:strokeColor="#861629">
+
+        <ImageView
+            android:id="@+id/btnSamplePhoto"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toTopOf="@id/bg_cus"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@color/dark" />
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:id="@+id/btnWooman"
+        android:layout_width="64dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/selector_btn_woman"
+        android:elevation="1dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@id/bg_cus"
+        app:layout_constraintTop_toTopOf="@id/bg_cus"
+
+        />
+
+    <ImageView
+        android:id="@+id/btnMove"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="14dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_move"
+        app:layout_constraintTop_toTopOf="@id/btnRandom"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutMove"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="61dp"
+        android:background="#A7A6E2"
+        android:elevation="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/glHorizontal"
+        tools:visibility="gone">
+
+        <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
+            android:id="@+id/btnResetMove"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/bg_btn_move"
+            android:fontFamily="@font/baloo_2_bold"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/reset"
+            android:textColor="@color/figma_primary"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/rotateToRight"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_rotate_to_right"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/rotateToLeft"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnResetMove" />
+
+        <ImageView
+            android:id="@+id/rotateToLeft"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/ic_rotate_to_right"
+            android:gravity="center"
+            android:scaleX="-1"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rotateToRight" />
+
+
+        <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/baloo_2_bold"
+            android:text="@string/size"
+            android:textColor="@color/figma_primary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/scaleUp"
+            app:layout_constraintStart_toStartOf="@id/scaleUp"
+            app:layout_constraintBottom_toTopOf="@id/scaleUp"
+       />
+
+
+        <ImageView
+            android:id="@+id/scaleUp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="26dp"
+            android:background="@drawable/ic_scale_up"
+            android:gravity="center"
+            android:rotation="0"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/rotateToRight" />
+
+        <ImageView
+            android:id="@+id/scaleDown"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="26dp"
+            android:background="@drawable/ic_scale_down"
+            android:gravity="center"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/rotateToLeft" />
+
+
+
+
+        <ImageView
+            android:id="@+id/btnMoveLeft"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/ic_arrow_move"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".38"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btnMoveUp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/ic_arrow_move"
+            android:rotation="90"
+            app:layout_constraintBottom_toTopOf="@id/btnMoveLeft"
+            app:layout_constraintStart_toEndOf="@id/btnMoveLeft" />
+
+        <ImageView
+            android:id="@+id/btnMoveDown"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/ic_arrow_move"
+            android:rotation="-90"
+            app:layout_constraintStart_toEndOf="@id/btnMoveLeft"
+            app:layout_constraintTop_toBottomOf="@id/btnMoveLeft" />
+
+        <ImageView
+            android:id="@+id/btnSup"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:rotation="180"
+            app:layout_constraintBottom_toTopOf="@id/btnMoveDown"
+            app:layout_constraintEnd_toStartOf="@id/btnMoveRight"
+            app:layout_constraintStart_toEndOf="@id/btnMoveLeft"
+            app:layout_constraintTop_toBottomOf="@id/btnMoveUp" />
+
+        <ImageView
+            android:id="@+id/btnMoveRight"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/ic_arrow_move"
+            android:rotation="180"
+
+            app:layout_constraintStart_toEndOf="@id/btnMoveUp"
+            app:layout_constraintTop_toBottomOf="@id/btnMoveUp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/color"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/transparent"
+        android:elevation="1dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/btnMove"
+        app:layout_constraintStart_toEndOf="@id/btnRandom"
+        app:layout_constraintTop_toBottomOf="@id/glHorizontal"
+        tools:visibility="visible">
+        <!--    btnColor-->
+        <ImageView
+            android:id="@+id/btnColor"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_color"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+        <!--    flColor-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/flColor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="0dp"
+            android:elevation="1dp"
+            android:gravity="start"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/btnColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnColor"
+            app:layout_constraintTop_toTopOf="@+id/btnColor">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/relativeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:cardBackgroundColor="#E4E0E0"
+                app:cardCornerRadius="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="#38306B"
+                app:strokeWidth="2dp">
+
+
+                <RelativeLayout
+                    android:id="@+id/relative"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="8dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcvColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="4dp"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="10"
+                        tools:listitem="@layout/item_color" />
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:id="@+id/btnRandom"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:elevation="2dp"
+        android:src="@drawable/ic_random"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/glHorizontal" />
+
+    <TextView
+        android:id="@+id/bg_cus"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="61dp"
+        android:background="#A7A6E2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/glHorizontal" />
+
+
+    <!--    rcvLayer-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvLayer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="10dp"
+        android:clipToPadding="false"
+        android:layerType="hardware"
+        android:paddingHorizontal="9.5dp"
+        android:paddingBottom="80dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bg_cus"
+        app:spanCount="5"
+        tools:itemCount="50"
+        tools:listitem="@layout/item_customize"
+        tools:visibility="visible" />
+
+
+    <!--    flBottomNav-->
+    <FrameLayout
+        android:id="@+id/flBottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="#80A1DB"
+        android:clipChildren="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!--        rcvNavigation-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="15dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:layerType="hardware"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_bottom_navigation" />
+    </FrameLayout>
+
+    <!--    &lt;!&ndash;    flNativeCollab&ndash;&gt;-->
+    <FrameLayout
+        android:id="@+id/flNativeCollab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

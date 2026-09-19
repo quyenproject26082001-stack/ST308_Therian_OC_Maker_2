@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imvImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:importantForAccessibility="no"
+        android:scaleType="fitXY"
+        android:src="@drawable/img_intro_1"
+        app:layout_constraintDimensionRatio="360:550"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
+        android:id="@+id/tvContent"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginHorizontal="16dp"
+        android:fontFamily="@font/baloo_2_bold"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:maxLines="2"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imvImage"
+        app:outerStrokeColor="#FF38306B"
+        app:outerStrokeWidth="1dp"
+        tools:text="Create your own avatar however you like" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

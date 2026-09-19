@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "956729162636",
+    "project_id": "st300-therian-oc-maker",
+    "storage_bucket": "st300-therian-oc-maker.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956729162636:android:2dbc81198fa6b44a98b4a9",
+        "android_client_info": {
+          "package_name": "com.therian.oc.aaa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwdJfm2JEIShA7dRqBJwtZq97jd9VNieA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
