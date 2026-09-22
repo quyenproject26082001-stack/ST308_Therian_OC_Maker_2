@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
-    android:layout_marginBottom="8dp">
+    android:layout_height="@dimen/dp_56"
+    android:layout_marginBottom="@dimen/dp_8">
 
     <FrameLayout
         android:id="@+id/flMain"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="@dimen/dp_56"
         android:background="@drawable/bg_language_selector_v2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,9 +22,9 @@
 
             <ImageView
                 android:id="@+id/imvFlag"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="20dp"
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_marginStart="@dimen/dp_20"
                 android:contentDescription="@null"
                 android:importantForAccessibility="no"
                 android:scaleType="centerCrop"
@@ -36,13 +36,13 @@
             <TextView
                 android:id="@+id/tvLang"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:layout_marginStart="8dp"
+                android:layout_height="@dimen/dp_24"
+                android:layout_marginStart="@dimen/dp_8"
                 android:fontFamily="@font/baloo_2_bold"
                 android:gravity="center_vertical"
                 android:includeFontPadding="false"
                 android:textColor="#FF38306B"
-                android:textSize="18sp"
+                android:textSize="@dimen/sp_18"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/imvFlag"
                 app:layout_constraintTop_toTopOf="parent"
@@ -50,9 +50,9 @@
 
             <ImageView
                 android:id="@+id/btnRadio"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_marginEnd="20dp"
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_20"
                 android:contentDescription="@null"
                 android:importantForAccessibility="no"
                 android:src="@drawable/ic_not_tick_lang"

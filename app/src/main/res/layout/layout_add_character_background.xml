@@ -9,14 +9,15 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="@dimen/dp_22"
         android:background="@drawable/bg_bg" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/sectionTab"
-        android:layout_width="264dp"
-        android:layout_height="40dp"
-        android:layout_marginHorizontal="13dp"
+        android:layout_width="@dimen/dp_264"
+        android:layout_height="@dimen/dp_40"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="@dimen/dp_13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/tab_bg_slt"
@@ -27,8 +28,8 @@
         <!--                btnBackgroundImage-->
         <FrameLayout
             android:id="@+id/btnBackgroundImage"
-            android:layout_width="0dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="@dimen/dp_0"
+            android:layout_marginEnd="@dimen/dp_8"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btnBackgroundColor"
             android:layout_height="match_parent"
@@ -47,17 +48,17 @@
                 android:text="@string/image"
 
                 android:textColor="@color/figma_primary"
-                android:textSize="18sp" />
+                android:textSize="@dimen/sp_18" />
 
         </FrameLayout>
 
         <!--                btnBackgroundColor-->
         <FrameLayout
             android:id="@+id/btnBackgroundColor"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/dp_0"
             android:layout_height="match_parent"
-            android:layout_marginTop="0dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/dp_0"
+            android:layout_marginStart="@dimen/dp_8"
             app:layout_constraintStart_toEndOf="@id/btnBackgroundImage"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_weight="1">
@@ -74,7 +75,7 @@
                 android:letterSpacing="0.05"
                 android:text="@string/color"
                 android:textColor="@color/figma_primary"
-                android:textSize="18sp" />
+                android:textSize="@dimen/sp_18" />
 
         </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -84,22 +85,34 @@
         android:id="@+id/lnlBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="62dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginTop="@dimen/dp_62"
+        android:layout_marginBottom="@dimen/dp_25"
         android:orientation="vertical"
         android:visibility="gone"
         tools:visibility="visible">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvBackgroundCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_24"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_category"
+            tools:visibility="visible" />
 
 
         <!--            rcvBackgroundImage-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcvBackgroundImage"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="4.5dp"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/dp_4_5"
             android:clipToPadding="false"
-            android:paddingHorizontal="7.5dp"
-            android:paddingBottom="60dp"
+            android:paddingHorizontal="@dimen/dp_7_5"
+            android:paddingBottom="@dimen/dp_60"
             android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="5"
@@ -112,11 +125,12 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcvBackgroundColor"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="4.5dp"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/dp_4_5"
             android:clipToPadding="false"
-            android:paddingHorizontal="7.5dp"
-            android:paddingBottom="60dp"
+            android:paddingHorizontal="@dimen/dp_7_5"
+            android:paddingBottom="@dimen/dp_60"
             android:visibility="gone"
 
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

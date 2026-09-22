@@ -30,7 +30,7 @@ class LayerCustomizeAdapter(val context: Context) : ListAdapter<ItemNavCustomMod
     inner class CustomizeViewHolder(val binding: ItemCustomizeBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(item: ItemNavCustomModel, position: Int) {
             binding.apply {
-                val cornerRadiusPx = (4f * context.resources.displayMetrics.density).toInt()
+                val cornerRadiusPx = context.resources.getDimensionPixelSize(R.dimen.dp_4)
 
                 val itemType = when (item.path) {
                     AssetsKey.NONE_LAYER -> "NONE"

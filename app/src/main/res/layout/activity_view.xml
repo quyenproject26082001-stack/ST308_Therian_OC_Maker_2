@@ -24,13 +24,13 @@
     <!--    cvImage-->
     <FrameLayout
         android:id="@+id/cvImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="0dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginHorizontal="@dimen/dp_0"
+        android:layout_marginBottom="@dimen/dp_16"
         android:visibility="visible"
-        android:layout_marginTop="6dp"
-        app:strokeWidth="2dp"
+        android:layout_marginTop="@dimen/dp_6"
+        app:strokeWidth="@dimen/dp_2"
         app:cardBackgroundColor="@color/white"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintBottom_toTopOf="@id/lnlBottom"
@@ -38,13 +38,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layoutActionBar"
         app:strokeColor="#861629"
-        app:cardCornerRadius="4dp"
+        app:cardCornerRadius="@dimen/dp_4"
         >
 
         <!--        imvImage-->
         <ImageView
             android:id="@+id/imvImage"
-            android:padding="2dp"
+            android:padding="@dimen/dp_2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="center" />
@@ -57,10 +57,10 @@
         android:id="@+id/lnlBottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="0dp"
+        android:paddingHorizontal="@dimen/dp_0"
         android:visibility="visible"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="62dp"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_0"
         app:layout_constraintBottom_toBottomOf="parent"
         >
 

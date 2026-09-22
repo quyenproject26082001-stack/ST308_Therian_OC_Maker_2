@@ -17,10 +17,10 @@
 
     <ImageView
         android:id="@+id/btnSettings"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_52"
+        android:layout_marginEnd="@dimen/dp_20"
         android:contentDescription="@string/settings"
         android:scaleType="fitXY"
         android:src="@drawable/ic_setting"
@@ -29,9 +29,9 @@
 
     <ImageView
         android:id="@+id/imgAppName"
-        android:layout_width="274dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="112dp"
+        android:layout_width="@dimen/dp_274"
+        android:layout_height="@dimen/dp_88"
+        android:layout_marginTop="@dimen/dp_112"
         android:contentDescription="@null"
         android:importantForAccessibility="no"
         android:scaleType="centerCrop"
@@ -43,8 +43,8 @@
     <ScrollView
         android:id="@+id/scvMain"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="236dp"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_236"
         android:fillViewport="true"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,21 +53,21 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="68dp">
+            android:paddingBottom="@dimen/dp_68">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btnPlay"
-                android:layout_width="0dp"
-                android:layout_height="112dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="0dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="0dp"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_112"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_0"
+                app:cardCornerRadius="@dimen/dp_12"
+                app:cardElevation="@dimen/dp_0"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:strokeColor="@color/figma_primary"
-                app:strokeWidth="2dp">
+                app:strokeWidth="@dimen/dp_2">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -82,27 +82,27 @@
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="46dp"
+                        android:layout_height="@dimen/dp_46"
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/bg_home_text_left" />
 
                     <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
                         android:id="@+id/tv1"
-                        android:layout_width="206dp"
-                        android:layout_height="46dp"
+                        android:layout_width="@dimen/dp_206"
+                        android:layout_height="@dimen/dp_46"
                         android:layout_gravity="start|center_vertical"
                         android:fontFamily="@font/baloo_2_bold"
                         android:gravity="center"
                         android:includeFontPadding="false"
                         android:text="@string/play"
                         android:textColor="@color/figma_primary"
-                        android:textSize="28sp"
+                        android:textSize="@dimen/sp_28"
                         app:outerStrokeColor="@color/white"
-                        app:outerStrokeWidth="2dp" />
+                        app:outerStrokeWidth="@dimen/dp_2" />
 
                     <ImageView
-                        android:layout_width="112dp"
-                        android:layout_height="112dp"
+                        android:layout_width="@dimen/dp_112"
+                        android:layout_height="@dimen/dp_112"
                         android:layout_gravity="end"
                         android:contentDescription="@null"
                         android:scaleType="fitCenter"
@@ -112,17 +112,17 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btnCosPlay"
-                android:layout_width="0dp"
-                android:layout_height="112dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="0dp"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_112"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_12"
+                app:cardCornerRadius="@dimen/dp_12"
+                app:cardElevation="@dimen/dp_0"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnPlay"
                 app:strokeColor="@color/figma_primary"
-                app:strokeWidth="2dp">
+                app:strokeWidth="@dimen/dp_2">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -137,13 +137,13 @@
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="46dp"
+                        android:layout_height="@dimen/dp_46"
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/bg_home_text_right" />
 
                     <ImageView
-                        android:layout_width="112dp"
-                        android:layout_height="112dp"
+                        android:layout_width="@dimen/dp_112"
+                        android:layout_height="@dimen/dp_112"
                         android:layout_gravity="start"
                         android:contentDescription="@null"
                         android:scaleType="fitCenter"
@@ -151,33 +151,33 @@
 
                     <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
                         android:id="@+id/tv2"
-                        android:layout_width="216dp"
-                        android:layout_height="46dp"
+                        android:layout_width="@dimen/dp_216"
+                        android:layout_height="@dimen/dp_46"
                         android:layout_gravity="end|center_vertical"
                         android:fontFamily="@font/baloo_2_bold"
                         android:gravity="center"
                         android:includeFontPadding="false"
                         android:text="@string/cosplay_therian"
                         android:textColor="@color/figma_primary"
-                        android:textSize="28sp"
+                        android:textSize="@dimen/sp_28"
                         app:outerStrokeColor="@color/white"
-                        app:outerStrokeWidth="2dp" />
+                        app:outerStrokeWidth="@dimen/dp_2" />
                 </FrameLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btnRandom"
-                android:layout_width="0dp"
-                android:layout_height="112dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="0dp"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_112"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_12"
+                app:cardCornerRadius="@dimen/dp_12"
+                app:cardElevation="@dimen/dp_0"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnCosPlay"
                 app:strokeColor="@color/figma_primary"
-                app:strokeWidth="2dp">
+                app:strokeWidth="@dimen/dp_2">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -192,27 +192,27 @@
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="46dp"
+                        android:layout_height="@dimen/dp_46"
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/bg_home_text_left" />
 
                     <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
                         android:id="@+id/tv3"
-                        android:layout_width="216dp"
-                        android:layout_height="46dp"
+                        android:layout_width="@dimen/dp_216"
+                        android:layout_height="@dimen/dp_46"
                         android:layout_gravity="start|center_vertical"
                         android:fontFamily="@font/baloo_2_bold"
                         android:gravity="center"
                         android:includeFontPadding="false"
                         android:text="@string/therian_random"
                         android:textColor="@color/figma_primary"
-                        android:textSize="28sp"
+                        android:textSize="@dimen/sp_28"
                         app:outerStrokeColor="@color/white"
-                        app:outerStrokeWidth="2dp" />
+                        app:outerStrokeWidth="@dimen/dp_2" />
 
                     <ImageView
-                        android:layout_width="102dp"
-                        android:layout_height="112dp"
+                        android:layout_width="@dimen/dp_102"
+                        android:layout_height="@dimen/dp_112"
                         android:layout_gravity="end"
                         android:contentDescription="@null"
                         android:scaleType="fitCenter"
@@ -222,17 +222,17 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btnMyCreation"
-                android:layout_width="0dp"
-                android:layout_height="112dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="0dp"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_112"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_12"
+                app:cardCornerRadius="@dimen/dp_12"
+                app:cardElevation="@dimen/dp_0"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnRandom"
                 app:strokeColor="@color/figma_primary"
-                app:strokeWidth="2dp">
+                app:strokeWidth="@dimen/dp_2">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -247,13 +247,13 @@
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="46dp"
+                        android:layout_height="@dimen/dp_46"
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/bg_home_text_right" />
 
                     <ImageView
-                        android:layout_width="112dp"
-                        android:layout_height="112dp"
+                        android:layout_width="@dimen/dp_112"
+                        android:layout_height="@dimen/dp_112"
                         android:layout_gravity="start"
                         android:contentDescription="@null"
                         android:scaleType="fitCenter"
@@ -261,17 +261,17 @@
 
                     <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
                         android:id="@+id/tv4"
-                        android:layout_width="216dp"
-                        android:layout_height="46dp"
+                        android:layout_width="@dimen/dp_216"
+                        android:layout_height="@dimen/dp_46"
                         android:layout_gravity="end|center_vertical"
                         android:fontFamily="@font/baloo_2_bold"
                         android:gravity="center"
                         android:includeFontPadding="false"
                         android:text="@string/creation"
                         android:textColor="@color/figma_primary"
-                        android:textSize="28sp"
+                        android:textSize="@dimen/sp_28"
                         app:outerStrokeColor="@color/white"
-                        app:outerStrokeWidth="2dp" />
+                        app:outerStrokeWidth="@dimen/dp_2" />
                 </FrameLayout>
             </com.google.android.material.card.MaterialCardView>
 

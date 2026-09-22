@@ -6,8 +6,8 @@
     android:layout_height="wrap_content">
 
     <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
         app:cardBackgroundColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="6:6"
@@ -20,12 +20,12 @@
             android:id="@+id/containerCard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="4.5dp"
+            android:layout_margin="@dimen/dp_4_5"
             app:cardBackgroundColor="@color/transparent"
-            app:cardCornerRadius="4dp"
-            app:cardElevation="0dp"
+            app:cardCornerRadius="@dimen/dp_4"
+            app:cardElevation="@dimen/dp_0"
             app:strokeColor="@color/app"
-            app:strokeWidth="3dp"
+            app:strokeWidth="@dimen/dp_3"
 
             >
 
@@ -43,13 +43,13 @@
                 android:layout_height="match_parent"
                 android:visibility="gone"
                 app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="4dp"
+                app:cardCornerRadius="@dimen/dp_4"
                 tools:visibility="visible">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="15dp"
+                    android:padding="@dimen/dp_15"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ic_none"
                     app:tint="@color/figma_primary" />
@@ -71,8 +71,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
-                    android:padding="15dp"
-                    android:layout_marginTop="-8dp"
+                    android:padding="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_minus_8"
                     android:scaleType="fitCenter"
                     android:src="@drawable/ic_add_image"
                     android:tint="@color/figma_primary" />
@@ -86,7 +86,7 @@
                     android:gravity="center"
                     android:text="@string/add_image"
                     android:textColor="@color/figma_primary"
-                    android:textSize="10sp"
+                    android:textSize="@dimen/sp_10"
                     style="@style/single_marquee"
                     android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="parent"

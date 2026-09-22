@@ -2,6 +2,7 @@ package com.therian.oc.aaa.dialog
 
 import android.app.Activity
 import android.graphics.Bitmap
+import android.graphics.Rect
 import com.therian.oc.aaa.R
 import com.therian.oc.aaa.core.base.BaseDialog
 import com.therian.oc.aaa.core.extensions.hideNavigation
@@ -28,9 +29,31 @@ class CosplayResultDialog(
         if (samplePath.isNotEmpty()) {
             loadImage(context, samplePath, binding.btnSamplePhoto)
         }
-        binding.tvRef.text = context.getString(R.string._100_match)
-            .replace("100%", "${progress.coerceIn(0, 100)}%")
+        updateProgressDisplay()
         binding.tvTitle.isSelected = true
+    }
+
+    private fun updateProgressDisplay() {
+        val safeProgress = progress.coerceIn(0, 100)
+        binding.tvRef.text = "$safeProgress%"
+
+        binding.ctnProgress.post {
+            val progressRatio = safeProgress / 100f
+            val containerWidth = binding.ctnProgress.width.toFloat()
+            val thumbWidth = binding.icThumb.width.toFloat()
+            val thumbLeft = progressRatio * (containerWidth - thumbWidth).coerceAtLeast(0f)
+            val revealRight = (thumbLeft + thumbWidth / 2f)
+                .coerceIn(0f, containerWidth)
+                .toInt()
+
+            binding.icThumb.translationX = thumbLeft
+            binding.sbProgressFull.clipBounds = Rect(
+                0,
+                0,
+                revealRight,
+                binding.sbProgressFull.height
+            )
+        }
     }
 
     override fun initAction() {

@@ -18,10 +18,11 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vpgTutorial"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/dp_0"
         android:overScrollMode="never"
         tools:src="@layout/item_intro"
-        app:layout_constraintDimensionRatio="360:604"
+        android:layout_marginBottom="@dimen/dp_8"
+        app:layout_constraintBottom_toTopOf="@id/btnNext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,31 +30,33 @@
     <!--    dotsIndicator-->
     <ImageView
         android:id="@+id/dotsIndicator"
-        android:layout_width="96dp"
-        android:layout_height="6dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="@dimen/dp_96"
+        android:layout_height="@dimen/dp_6"
         android:contentDescription="@null"
         android:importantForAccessibility="no"
         android:src="@drawable/ic_dot_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vpgTutorial" />
+        app:layout_constraintTop_toTopOf="@id/btnNext"
+        app:layout_constraintBottom_toBottomOf="@id/btnNext"
+
+        />
 
     <!--    btnNext-->
     <TextView
         android:id="@+id/btnNext"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginEnd="20dp"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginEnd="@dimen/dp_20"
         android:fontFamily="@font/baloo_2_bold"
         android:gravity="center"
         android:includeFontPadding="false"
         android:text="@string/next_intro"
         android:textColor="#FF38306B"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@id/dotsIndicator"
+        android:textSize="@dimen/sp_18"
+        android:layout_marginBottom="@dimen/dp_80"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/dotsIndicator"
         />
 
 

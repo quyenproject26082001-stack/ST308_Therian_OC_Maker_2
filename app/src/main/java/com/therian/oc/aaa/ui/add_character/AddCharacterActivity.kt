@@ -6,7 +6,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.Shader
 import android.net.Uri
@@ -40,7 +39,6 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import com.therian.oc.aaa.R
 import com.therian.oc.aaa.core.base.BaseActivity
-import com.therian.oc.aaa.core.custom.text.OuterStrokeTextView
 import com.therian.oc.aaa.core.extensions.checkInternet
 import com.therian.oc.aaa.core.extensions.checkPermissions
 import com.therian.oc.aaa.core.extensions.goToSettings
@@ -59,7 +57,6 @@ import com.therian.oc.aaa.core.extensions.tap
 import com.therian.oc.aaa.core.extensions.visible
 import com.therian.oc.aaa.core.helper.BitmapHelper
 import com.therian.oc.aaa.core.helper.LanguageHelper
-import com.therian.oc.aaa.core.helper.UnitHelper
 import com.therian.oc.aaa.core.utils.DataLocal
 import com.therian.oc.aaa.core.utils.key.AssetsKey
 import com.therian.oc.aaa.core.utils.key.IntentKey
@@ -74,6 +71,7 @@ import com.therian.oc.aaa.dialog.DialogSpeech
 import com.therian.oc.aaa.dialog.YesNoDialog
 import com.therian.oc.aaa.listener.listenerdraw.OnDrawListener
 import com.therian.oc.aaa.ui.add_character.adapter.BackgroundColorAdapter
+import com.therian.oc.aaa.ui.add_character.adapter.AddCharacterCategoryAdapter
 import com.therian.oc.aaa.ui.add_character.adapter.BackgroundImageAdapter
 import com.therian.oc.aaa.ui.add_character.adapter.SpeechAdapter
 import com.therian.oc.aaa.ui.add_character.adapter.StickerAdapter
@@ -94,8 +92,11 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
     private val viewModel: AddCharacterViewModel by viewModels()
     private val permissionViewModel: PermissionViewModel by viewModels()
     private val backgroundImageAdapter by lazy { BackgroundImageAdapter() }
+    private val backgroundCategoryAdapter by lazy { AddCharacterCategoryAdapter() }
     private val backgroundColorAdapter by lazy { BackgroundColorAdapter() }
+    private val stickerCategoryAdapter by lazy { AddCharacterCategoryAdapter() }
     private val stickerAdapter by lazy { StickerAdapter() }
+    private val speechCategoryAdapter by lazy { AddCharacterCategoryAdapter() }
     private val speechAdapter by lazy { SpeechAdapter() }
     private val textFontAdapter by lazy { TextFontAdapter(this) }
     private val textColorAdapter by lazy { TextColorAdapter() }
@@ -298,8 +299,9 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                                     "Keyboard showing - clearing FLAG_LAYOUT_NO_LIMITS"
                                 )
                                 window.clearFlags(android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
-                                viewModel.layoutParams.topMargin =
-                                    UnitHelper.dpToPx(this@AddCharacterActivity, -160)
+                                viewModel.layoutParams.topMargin = resources.getDimensionPixelSize(
+                                    R.dimen.dp_minus_160
+                                )
                                 flFunction.layoutParams = viewModel.layoutParams
                                 Log.d(
                                     "EditTextFlow",
@@ -341,7 +343,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
             actionBar.apply {
                 btnActionBarLeft.tap { confirmExit() }
                 btnActionBarCenter.tap { confirmReset() }
-                btnActionBarRightText.tap {
+                btnActionBarRightText.tap (3000){
                     handleSave()
                 }
             }
@@ -411,6 +413,13 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                     }
             }
 
+            backgroundCategoryAdapter.onCategoryClick = { position ->
+                viewModel.updateBackgroundCategorySelected(position)
+                backgroundCategoryAdapter.submitList(viewModel.backgroundCategoryList)
+                backgroundImageAdapter.submitList(viewModel.backgroundImageList)
+                backgroundTab.rcvBackgroundImage.scrollToPosition(0)
+            }
+
             backgroundColorAdapter.apply {
                 onChooseColorClick = { handleChooseColor() }
                 onBackgroundColorClick =
@@ -425,7 +434,27 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                 }
             }
 
-            speechAdapter.onItemClick = { path -> handleSpeech(path) }
+            stickerCategoryAdapter.onCategoryClick = { position ->
+                viewModel.updateStickerCategorySelected(position)
+                stickerCategoryAdapter.submitList(viewModel.stickerCategoryList)
+                stickerAdapter.submitList(viewModel.stickerList)
+                stickerTab.rcvSticker.scrollToPosition(0)
+            }
+
+            speechCategoryAdapter.onCategoryClick = { position ->
+                viewModel.updateSpeechCategorySelected(position)
+                speechCategoryAdapter.submitList(viewModel.speechCategoryList)
+                speechAdapter.submitList(viewModel.speechList)
+                speechTab.rcvSpeech.scrollToPosition(0)
+            }
+
+            speechAdapter.onItemClick = { path ->
+                if (path.startsWith("http")) {
+                    checkInternet { handleSpeech(path) }
+                } else {
+                    handleSpeech(path)
+                }
+            }
 
             textFontAdapter.onTextFontClick = { font, position -> handleFontClick(font, position) }
 
@@ -471,6 +500,11 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                 itemAnimator = null
             }
 
+            backgroundTab.rcvBackgroundCategory.apply {
+                adapter = backgroundCategoryAdapter
+                itemAnimator = null
+            }
+
             backgroundTab.rcvBackgroundColor.apply {
                 adapter = backgroundColorAdapter
                 itemAnimator = null
@@ -483,11 +517,21 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                 setHasFixedSize(true)
             }
 
+            stickerTab.rcvCategory.apply {
+                adapter = stickerCategoryAdapter
+                itemAnimator = null
+            }
+
             speechTab.rcvSpeech.apply {
                 adapter = speechAdapter
                 itemAnimator = null
                 setItemViewCacheSize(200)
                 setHasFixedSize(true)
+            }
+
+            speechTab.rcvCategory.apply {
+                adapter = speechCategoryAdapter
+                itemAnimator = null
             }
 
             textTab.rcvFont.apply {
@@ -534,8 +578,15 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
             withContext(Dispatchers.Main) {
 
                 focusNoneBackgroundItem()
+                backgroundCategoryAdapter.submitList(viewModel.backgroundCategoryList)
+                binding.backgroundTab.rcvBackgroundCategory.isVisible =
+                    viewModel.backgroundCategoryList.isNotEmpty()
                 backgroundColorAdapter.submitList(viewModel.backgroundColorList)
+                stickerCategoryAdapter.submitList(viewModel.stickerCategoryList)
+                binding.stickerTab.rcvCategory.isVisible = viewModel.stickerCategoryList.isNotEmpty()
                 stickerAdapter.submitList(viewModel.stickerList)
+                speechCategoryAdapter.submitList(viewModel.speechCategoryList)
+                binding.speechTab.rcvCategory.isVisible = viewModel.speechCategoryList.isNotEmpty()
                 speechAdapter.submitList(viewModel.speechList)
                 textFontAdapter.submitListReset(viewModel.textFontList)
                 textColorAdapter.submitListReset(viewModel.textColorList)
@@ -696,111 +747,23 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                 ValueKey.IMAGE_BACKGROUND -> {
                     backgroundTab.rcvBackgroundImage.visible()
                     backgroundTab.rcvBackgroundColor.gone()
-                    setupSelectedTabBackground(
-                        backgroundTab.btnBackgroundImage,
-                        backgroundTab.tvBackgroundImage,
-                        backgroundTab.imvFocusImage,
-                        backgroundTab.subTabImage,
-                        isLeftTab = true
-                    )
-                    setupUnselectedTabBackground(
-                        backgroundTab.btnBackgroundColor,
-                        backgroundTab.tvBackgroundColor,
-                        backgroundTab.imvFocusColor,
-                        backgroundTab.subTabColor,
-                        isLeftTab = false
-                    )
+                    backgroundTab.rcvBackgroundCategory.isVisible =
+                        viewModel.backgroundCategoryList.isNotEmpty()
+                    backgroundTab.sectionTab.setBackgroundResource(R.drawable.tab_bg_slt)
                     backgroundImageAdapter.submitList(viewModel.backgroundImageList)
                 }
 
                 ValueKey.COLOR_BACKGROUND -> {
                     backgroundTab.rcvBackgroundImage.gone()
                     backgroundTab.rcvBackgroundColor.visible()
-                    setupSelectedTabBackground(
-                        backgroundTab.btnBackgroundColor,
-                        backgroundTab.tvBackgroundColor,
-                        backgroundTab.imvFocusColor,
-                        backgroundTab.subTabColor,
-                        isLeftTab = false
-                    )
-                    setupUnselectedTabBackground(
-                        backgroundTab.btnBackgroundImage,
-                        backgroundTab.tvBackgroundImage,
-                        backgroundTab.imvFocusImage,
-                        backgroundTab.subTabImage,
-                        isLeftTab = true
-                    )
+                    backgroundTab.rcvBackgroundCategory.gone()
+                    backgroundTab.sectionTab.setBackgroundResource(R.drawable.tab_color_slt)
                     backgroundColorAdapter.submitList(viewModel.backgroundColorList)
                 }
 
                 else -> {}
             }
         }
-    }
-
-    private fun setupSelectedTabBackground(
-        tabView: View,
-        textView: android.widget.TextView,
-        focusImage: android.widget.ImageView,
-        subTab: View,
-        isLeftTab: Boolean
-    ) {
-        // Set weight = 1.6
-        val params = tabView.layoutParams as android.widget.LinearLayout.LayoutParams
-        params.weight = 1.0f
-        params.topMargin = 0
-        tabView.layoutParams = params
-
-        // Set text size = 18sp
-        textView.textSize = 20f
-
-        if (textView is OuterStrokeTextView) {
-            textView.setupSelectedTab()
-        }
-
-        // Apply gradient color from top to bottom - WHITE gradient for selected
-        textView.setTextColor(Color.parseColor("#39465A"))
-
-        // Show selected_tab drawable
-        focusImage.setImageResource(R.drawable.selected_tab)
-        focusImage.scaleX = 1f
-        focusImage.visible()
-
-        // Hide subTab
-        subTab.gone()
-    }
-
-    private fun setupUnselectedTabBackground(
-        tabView: View,
-        textView: android.widget.TextView,
-        focusImage: android.widget.ImageView,
-        subTab: View,
-        isLeftTab: Boolean
-    ) {
-        // Set weight = 1
-        val params = tabView.layoutParams as android.widget.LinearLayout.LayoutParams
-        params.weight = 1f
-        params.topMargin = UnitHelper.dpToPx(this, 0f).toInt()
-        tabView.layoutParams = params
-
-        // Set text size = 14sp, color = colorPrimary
-        textView.textSize = 20f
-
-        if (textView is OuterStrokeTextView) {
-            textView.setupUnselectedTab()
-        }
-        // Apply RED gradient for unselected
-        textView.setTextColor(Color.parseColor("#FFFFFF"))
-
-
-        // Show un_selected_tab drawable
-        focusImage.setImageResource(R.drawable.un_selected_tab)
-        // Flip horizontally if on left side
-        focusImage.scaleX = if (isLeftTab) -1f else 1f
-        focusImage.visible()
-
-        // Show subTab
-        subTab.gone()
     }
 
     private fun setupTypeNavigation(type: Int) {
@@ -882,8 +845,15 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                 binding.tvGetText.setTextColor(viewModel.textColorList[1].color)
                 addDrawable(viewModel.pathDefault, true)
                 focusNoneBackgroundItem()
+                backgroundCategoryAdapter.submitList(viewModel.backgroundCategoryList)
+                binding.backgroundTab.rcvBackgroundCategory.isVisible =
+                    viewModel.backgroundCategoryList.isNotEmpty()
                 backgroundColorAdapter.submitList(viewModel.backgroundColorList)
+                stickerCategoryAdapter.submitList(viewModel.stickerCategoryList)
+                binding.stickerTab.rcvCategory.isVisible = viewModel.stickerCategoryList.isNotEmpty()
                 stickerAdapter.submitList(viewModel.stickerList)
+                speechCategoryAdapter.submitList(viewModel.speechCategoryList)
+                binding.speechTab.rcvCategory.isVisible = viewModel.speechCategoryList.isNotEmpty()
                 speechAdapter.submitList(viewModel.speechList)
                 textFontAdapter.submitListReset(viewModel.textFontList)
                 textColorAdapter.submitListReset(viewModel.textColorList)

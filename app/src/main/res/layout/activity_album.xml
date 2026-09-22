@@ -11,7 +11,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/dp_0"
         android:scaleType="fitXY"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/frmList"
@@ -46,26 +46,30 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frmList"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="0dp"
-        app:layout_goneMarginTop="0dp"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginBottom="@dimen/dp_0"
+        app:layout_goneMarginTop="@dimen/dp_0"
         tools:background="@drawable/bg_down"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="@dimen/dp_0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cvType" />
     <!--    cvType-->
     <FrameLayout
         android:id="@+id/cvType"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:elevation="1dp"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:elevation="@dimen/dp_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="260:40"
         app:cardBackgroundColor="@android:color/transparent"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintWidth_percent="0.72222222222"
+        android:layout_marginHorizontal="@dimen/dp_20"
         app:layout_constraintTop_toBottomOf="@id/native_ads"
         app:strokeColor="@color/transparent"
-        app:strokeWidth="0dp"
-        app:cardElevation="0dp">
+        app:strokeWidth="@dimen/dp_0"
+        app:cardElevation="@dimen/dp_0">
 
         <!-- background tab full-width, đổi src theo tab được chọn -->
         <ImageView
@@ -84,7 +88,7 @@
             <!--            btnMyPixel-->
             <FrameLayout
                 android:id="@+id/btnMyPixel"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/dp_0"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
@@ -96,16 +100,16 @@
                     android:fontFamily="@font/baloo_2_bold"
                     android:gravity="center"
                     android:text="@string/character"
-                    android:layout_marginEnd="19dp"
+                    android:layout_marginEnd="@dimen/dp_19"
                     android:textColor="@color/app"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/sp_18" />
 
             </FrameLayout>
 
             <!--            btnMyDesign-->
             <FrameLayout
                 android:id="@+id/btnMyDesign"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/dp_0"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
@@ -116,10 +120,10 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/baloo_2_bold"
                     android:gravity="center"
-                    android:layout_marginStart="19dp"
+                    android:layout_marginStart="@dimen/dp_19"
                     android:text="@string/my_design"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/sp_18" />
 
             </FrameLayout>
 
@@ -132,8 +136,8 @@
         android:id="@+id/flBottomView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="0dp"
-        android:elevation="2dp"
+        android:paddingHorizontal="@dimen/dp_0"
+        android:elevation="@dimen/dp_2"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent">
 
@@ -148,12 +152,12 @@
         android:id="@+id/lnlBottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
-        android:paddingHorizontal="0dp"
-        android:elevation="1dp"
+        android:layout_marginBottom="@dimen/dp_0"
+        android:paddingHorizontal="@dimen/dp_0"
+        android:elevation="@dimen/dp_1"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@id/flBottomView"
-        app:layout_goneMarginBottom="0dp">
+        app:layout_goneMarginBottom="@dimen/dp_0">
 
         <include layout="@layout/layout_bottom" />
 
@@ -166,7 +170,7 @@
         android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="10dp"
+            android:elevation="@dimen/dp_10"
             app:layout_constraintBottom_toBottomOf="parent">
 
         </FrameLayout>

@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/imgLight"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_0"
             android:contentDescription="@null"
             android:scaleType="fitXY"
             android:src="@drawable/light"
@@ -23,250 +23,184 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvTitle"
-            style="@style/single_marquee"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            tools:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-        android:paddingHorizontal="30dp"
-            android:layout_marginHorizontal="51dp"
-            android:layout_marginBottom="-26dp"
-            android:background="@drawable/bg_title"
-            android:clipChildren="false"
-            android:clipToOutline="false"
-            android:clipToPadding="false"
-            android:elevation="1dp"
-            android:fontFamily="@font/baloo_2_bold"
-            android:gravity="center"
-            android:paddingVertical="5dp"
-            android:text="@string/cosplay_results"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@id/layoutMain"
-            app:layout_constraintEnd_toEndOf="@id/layoutMain"
-            app:layout_constraintStart_toStartOf="@id/layoutMain" />
 
         <!--        layoutMain-->
-        <androidx.cardview.widget.CardView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutMain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/dp_328"
+            android:layout_height="@dimen/dp_365"
             android:layout_gravity="center"
-            android:layout_marginHorizontal="16dp"
+            android:layout_marginHorizontal="@dimen/dp_16"
             android:clipChildren="false"
             android:clipToOutline="false"
             android:clipToPadding="false"
-            app:cardBackgroundColor="@color/transparent"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="0dp"
+            app:cardBackgroundColor="#EDEDFF"
+            app:cardElevation="@dimen/dp_0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+          >
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="#EDEDFF"
+                app:cardCornerRadius="@dimen/dp_16"
+                app:strokeColor="@color/figma_primary"
+                app:strokeWidth="@dimen/dp_1"/>
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/single_marquee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:clipChildren="false"
+                android:fontFamily="@font/baloo_2_bold"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/dp_30"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/cosplay_results"
+                android:textColor="@color/figma_primary"
+                android:textSize="@dimen/sp_24"
+                tools:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/ctnImg"
+                android:layout_width="@dimen/dp_184"
+                android:layout_height="@dimen/dp_184"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/dp_3"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/dp_76"
+                app:cardCornerRadius="@dimen/dp_12"
+                app:layout_constraintDimensionRatio="156:152"
+                app:strokeColor="@color/figma_primary"
+                app:strokeWidth="@dimen/dp_2">
+
+
+                <ImageView
+                    android:id="@+id/btnImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/dp_0"
+                    android:scaleType="fitCenter" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/dp_3"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/dp_7"
+                app:strokeColor="@color/transparent">
+
+                <ImageView
+                    android:id="@+id/btnSamplePhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/dp_0"
+                    android:scaleType="fitCenter" />
+            </com.google.android.material.card.MaterialCardView>
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/containerDialog"
-                android:layout_width="328dp"
-                android:layout_height="338dp"
-                android:background="@drawable/bg_dialog_delete_exit"
-                android:clipChildren="false"
-                android:clipToOutline="false"
-                android:clipToPadding="false">
-
-
-                <!--            tvDescription-->
-                <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
-                    android:id="@+id/tvDescription"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="38dp"
-                    android:fontFamily="@font/baloo_2_bold"
-                    android:gravity="center"
-                    android:paddingHorizontal="24dp"
-                    android:text="@string/your_cosplay_score"
-                    android:textColor="#586B8C"
-                    android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <FrameLayout
-                    android:id="@+id/ctnImage"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="0dp"
-                    android:background="@drawable/bg_img_character_sample"
-                    android:visibility="visible"
-                    app:layout_constraintHorizontal_chainStyle="packed"
-                    app:layout_constraintDimensionRatio="1:1"
-                    app:layout_constraintEnd_toStartOf="@id/ctnSample"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvDescription"
-                    app:layout_constraintVertical_bias="0">
-
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="3dp"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="8dp"
-                        app:cardBackgroundColor="#586B8C"
-                        app:cardCornerRadius="7dp"
-                        app:layout_constraintDimensionRatio="156:152"
-                        app:strokeColor="@color/transparent">
-
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="3dp"
-                            app:cardBackgroundColor="@color/app1"
-                            app:cardCornerRadius="7dp"
-                            app:strokeColor="@color/transparent">
-
-                            <ImageView
-                                android:id="@+id/btnImage"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:padding="0dp"
-                                android:scaleType="fitCenter" />
-                        </com.google.android.material.card.MaterialCardView>
-                    </com.google.android.material.card.MaterialCardView>
-                </FrameLayout>
-
-
-                <FrameLayout
-                    android:id="@+id/ctnSample"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_marginTop="26dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="0dp"
-                    android:background="@drawable/bg_img_character_sample"
-                    android:visibility="visible"
-                    app:layout_constraintDimensionRatio="1:1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/ctnImage"
-                    app:layout_constraintTop_toTopOf="@id/ctnImage"
-                    app:layout_constraintVertical_bias="0">
-
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="3dp"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="8dp"
-                        app:cardBackgroundColor="#586B8C"
-                        app:cardCornerRadius="7dp"
-                        app:layout_constraintDimensionRatio="156:152"
-                        app:strokeColor="@color/transparent">
-
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="3dp"
-                            app:cardBackgroundColor="@color/app1"
-                            app:cardCornerRadius="7dp"
-                            app:strokeColor="@color/transparent">
-
-                            <ImageView
-                                android:id="@+id/btnSamplePhoto"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:padding="0dp"
-                                android:scaleType="fitCenter" />
-                        </com.google.android.material.card.MaterialCardView>
-                    </com.google.android.material.card.MaterialCardView>
-                </FrameLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        app:strokeColor="@color/app"
-                        app:strokeWidth="2dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:cardBackgroundColor="#E8EDF7">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/_100_match"
-                        android:textSize="16sp"
-                        android:paddingHorizontal="10dp"
-                        android:id="@+id/tvRef"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/baloo_2_bold"
-                        android:textColor="@color/app"
-                        tools:text="qqqqqqqqqqqq"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        />
-                    </com.google.android.material.card.MaterialCardView>
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-                
-                
-                <LinearLayout
-                    android:id="@+id/llButtons"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_marginBottom="33dp"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintDimensionRatio="156:40"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-
-                    <!--                    btnYes-->
-                    <TextView
-                        android:id="@+id/btnNext"
-                        android:layout_width="88dp"
-                        android:layout_height="44dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/ic_no_dialog"
-                        android:fontFamily="@font/baloo_2_bold"
-                        android:gravity="center"
-                        android:paddingVertical="9dp"
-                        android:text="@string/next"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
+                android:layout_width="@dimen/dp_260"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_16"
+                app:layout_constraintTop_toBottomOf="@id/ctnImg"
+                android:background="@drawable/bg_progress_empty_h"
+                app:layout_constraintBottom_toTopOf="@id/tvRef"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/ctnProgress"
+                >
+                <ImageView
+                    android:id="@+id/sbProgressFull"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/bg_progress_full_h"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
-                android:id="@+id/spin"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_loading"
-                android:visibility="gone" />
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:src="@drawable/ic_thumb"
+                app:layout_constraintTop_toTopOf="@id/ctnProgress"
+                app:layout_constraintBottom_toBottomOf="@id/ctnProgress"
+                app:layout_constraintStart_toStartOf="@id/ctnProgress"
+                android:id="@+id/icThumb"
+                />
 
-        </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvRef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/baloo_2_bold"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:textColor="@color/figma_primary"
+                android:textSize="@dimen/sp_20"
+                app:layout_constraintTop_toBottomOf="@id/ctnProgress"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="100%" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/llButtons"
+            android:layout_width="@dimen/dp_156"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_33"
+            app:strokeWidth="@dimen/dp_2"
+            app:strokeColor="@color/figma_primary"
+            app:cardBackgroundColor="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_28"
+            app:layout_constraintTop_toBottomOf="@id/layoutMain"
+            app:layout_constraintDimensionRatio="156:44"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <!--                    btnYes-->
+            <TextView
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/baloo_2_bold"
+                android:gravity="center"
+                android:paddingVertical="@dimen/dp_9"
+                android:text="@string/next"
+                android:textColor="@color/figma_primary"
+                android:textSize="@dimen/sp_16" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/spin"
+            android:layout_width="@dimen/dp_42"
+            android:layout_height="@dimen/dp_42"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_loading"
+            android:visibility="gone" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

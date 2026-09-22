@@ -4,34 +4,34 @@
 
 
 
-    <!-- Lớp ngoài cùng: viền #4C97BC dày 1dp -->
+    <!-- Lớp ngoài cùng: viền #4C97BC dày @dimen/dp_1 -->
     <item>
         <shape android:shape="rectangle">
-            <stroke android:width="2dp" android:color="#861629"/>
-            <corners android:radius="16dp"/>
+            <stroke android:width="@dimen/dp_2" android:color="#861629"/>
+            <corners android:radius="@dimen/dp_16"/>
         </shape>
     </item>
 
-    <!-- Lớp giữa: viền #64BFED dày 2dp (inset vào 1dp) -->
+    <!-- Lớp giữa: viền #64BFED dày @dimen/dp_2 (inset vào @dimen/dp_1) -->
     <item
-        android:left="2dp"
-        android:top="2dp"
-        android:right="2dp"
-        android:bottom="2dp">
+        android:left="@dimen/dp_2"
+        android:top="@dimen/dp_2"
+        android:right="@dimen/dp_2"
+        android:bottom="@dimen/dp_2">
         <shape android:shape="rectangle">
-            <stroke android:width="1dp" android:color="#EA456C"/>
-            <corners android:radius="14dp"/>
+            <stroke android:width="@dimen/dp_1" android:color="#EA456C"/>
+            <corners android:radius="@dimen/dp_14"/>
         </shape>
     </item>
 
     <item
-        android:left="2dp"
-        android:top="2dp"
-        android:right="2dp"
-        android:bottom="2dp">
+        android:left="@dimen/dp_2"
+        android:top="@dimen/dp_2"
+        android:right="@dimen/dp_2"
+        android:bottom="@dimen/dp_2">
         <shape android:shape="rectangle">
-            <stroke android:width="1dp" android:color="#EB2994"/>
-            <corners android:radius="14dp"/>
+            <stroke android:width="@dimen/dp_1" android:color="#EB2994"/>
+            <corners android:radius="@dimen/dp_14"/>
         </shape>
     </item>
 

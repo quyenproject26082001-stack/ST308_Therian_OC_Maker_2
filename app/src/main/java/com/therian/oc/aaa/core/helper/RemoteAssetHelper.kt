@@ -1,6 +1,8 @@
 package com.therian.oc.aaa.core.helper
 
 import android.util.Log
+import com.therian.oc.aaa.data.model.AddCharacterCategoryModel
+import com.therian.oc.aaa.data.model.SelectedModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -10,6 +12,7 @@ import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import org.json.JSONObject
 import java.io.IOException
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.TimeUnit
@@ -44,6 +47,58 @@ object RemoteAssetHelper {
                 memoryCache[cacheKey] = ArrayList(discovered)
             }
             ArrayList(discovered)
+        }
+    }
+
+    suspend fun getCategoryRemoteAssets(
+        jsonUrl: String,
+        rootUrl: String,
+        groupName: String,
+        extensions: List<String> = listOf("png")
+    ): ArrayList<AddCharacterCategoryModel> = withContext(Dispatchers.IO) {
+        val request = Request.Builder().url(jsonUrl).get().build()
+
+        try {
+            client.newCall(request).execute().use { response ->
+                if (!response.isSuccessful) return@withContext arrayListOf()
+
+                val json = JSONObject(response.body?.string().orEmpty())
+                val groupArray = json.optJSONArray(groupName) ?: return@withContext arrayListOf()
+                val extension = extensions.firstOrNull()?.trimStart('.') ?: "png"
+                val categories = arrayListOf<AddCharacterCategoryModel>()
+
+                for (index in 0 until groupArray.length()) {
+                    val categoryJson = groupArray.optJSONObject(index) ?: continue
+                    val categoryName = categoryJson.optString("category").trim()
+                    val quantity = categoryJson.optInt("quantity", 0)
+                    if (quantity <= 0) continue
+
+                    val categoryRoot = if (categoryName.isBlank()) {
+                        "${rootUrl.trimEnd('/')}/$groupName"
+                    } else {
+                        "${rootUrl.trimEnd('/')}/$groupName/$categoryName"
+                    }
+
+                    val categoryItems = (1..quantity).mapTo(arrayListOf()) { itemIndex ->
+                        SelectedModel(
+                            path = "$categoryRoot/$itemIndex.$extension"
+                        )
+                    }
+                    categories.add(
+                        AddCharacterCategoryModel(
+                            name = categoryName.ifBlank {
+                                groupName.replaceFirstChar { it.uppercase() }
+                            },
+                            items = categoryItems,
+                            isSelected = categories.isEmpty()
+                        )
+                    )
+                }
+                categories
+            }
+        } catch (exception: Exception) {
+            Log.d(TAG, "Category json load failed for $groupName: ${exception.message}")
+            arrayListOf()
         }
     }
 

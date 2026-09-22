@@ -10,7 +10,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/dp_0"
         android:background="#A1CCEF"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@id/glHorizontal" />
@@ -30,11 +30,11 @@
     <!-- Layout Image Layer -->
     <FrameLayout
         android:id="@+id/layoutCustomLayerBackground"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_8"
         app:layout_constraintBottom_toTopOf="@id/containerBtnSamplePhoto"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,14 +44,14 @@
 
     <!-- Layout Image Layer -->
     <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_8"
         app:cardBackgroundColor="@android:color/transparent"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="0dp"
+        app:cardCornerRadius="@dimen/dp_4"
+        app:cardElevation="@dimen/dp_0"
         app:layout_constraintBottom_toTopOf="@id/glHorizontal"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,10 +77,10 @@
     <!--    btnFlip-->
     <ImageView
         android:id="@+id/btnFlip"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_16"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_flip"
         android:visibility="invisible"
@@ -90,10 +90,10 @@
     <!--    btnHide-->
     <ImageView
         android:id="@+id/btnHide"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_16"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_show"
         android:visibility="invisible"
@@ -103,13 +103,13 @@
 
     <TextView
         android:id="@+id/btnMan"
-        android:layout_width="64dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="6dp"
+        android:layout_width="@dimen/dp_64"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_6"
         android:background="@drawable/selector_btn_man"
-        android:elevation="1dp"
+        android:elevation="@dimen/dp_1"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layoutCustomLayerBackground" />
@@ -118,9 +118,9 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
+        android:layout_marginHorizontal="@dimen/dp_16"
         android:visibility="gone"
-        app:cardCornerRadius="28dp"
+        app:cardCornerRadius="@dimen/dp_28"
         app:layout_constraintBottom_toBottomOf="@+id/containerBtnSamplePhoto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,7 +132,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="28dp"
+            android:layout_height="@dimen/dp_28"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toTopOf="@id/bg_cus"
             app:layout_constraintEnd_toEndOf="parent"
@@ -145,17 +145,17 @@
         android:id="@+id/containerBtnSamplePhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/dp_16"
         android:visibility="gone"
-        app:cardCornerRadius="4dp"
+        app:cardCornerRadius="@dimen/dp_4"
         app:layout_constraintBottom_toTopOf="@id/bg_cus"
         app:layout_constraintEnd_toEndOf="parent"
         app:strokeColor="#861629">
 
         <ImageView
             android:id="@+id/btnSamplePhoto"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toTopOf="@id/bg_cus"
             app:layout_constraintEnd_toEndOf="parent"
@@ -165,11 +165,11 @@
 
     <TextView
         android:id="@+id/btnWooman"
-        android:layout_width="64dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="@dimen/dp_64"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginStart="@dimen/dp_12"
         android:background="@drawable/selector_btn_woman"
-        android:elevation="1dp"
+        android:elevation="@dimen/dp_1"
         android:visibility="gone"
         app:layout_constraintStart_toEndOf="@id/bg_cus"
         app:layout_constraintTop_toTopOf="@id/bg_cus"
@@ -178,10 +178,10 @@
 
     <ImageView
         android:id="@+id/btnMove"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="14dp"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_14"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_move"
         app:layout_constraintTop_toTopOf="@id/btnRandom"
@@ -190,10 +190,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutMove"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="61dp"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_61"
         android:background="#A7A6E2"
-        android:elevation="2dp"
+        android:elevation="@dimen/dp_2"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/glHorizontal"
@@ -201,27 +201,27 @@
 
         <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
             android:id="@+id/btnResetMove"
-            android:layout_width="70dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="21dp"
-            android:layout_marginTop="17dp"
+            android:layout_width="@dimen/dp_70"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginStart="@dimen/dp_21"
+            android:layout_marginTop="@dimen/dp_17"
             android:background="@drawable/bg_btn_move"
             android:fontFamily="@font/baloo_2_bold"
             android:gravity="center"
             android:singleLine="true"
             android:text="@string/reset"
             android:textColor="@color/figma_primary"
-            android:textSize="18sp"
+            android:textSize="@dimen/sp_18"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
         <ImageView
             android:id="@+id/rotateToRight"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="21dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginStart="@dimen/dp_21"
+            android:layout_marginTop="@dimen/dp_20"
             android:background="@drawable/ic_rotate_to_right"
             android:gravity="center"
             app:layout_constraintBottom_toTopOf="@id/rotateToLeft"
@@ -230,10 +230,10 @@
 
         <ImageView
             android:id="@+id/rotateToLeft"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="21dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginStart="@dimen/dp_21"
+            android:layout_marginTop="@dimen/dp_8"
             android:background="@drawable/ic_rotate_to_right"
             android:gravity="center"
             android:scaleX="-1"
@@ -245,11 +245,11 @@
         <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/dp_8"
             android:fontFamily="@font/baloo_2_bold"
             android:text="@string/size"
             android:textColor="@color/figma_primary"
-            android:textSize="18sp"
+            android:textSize="@dimen/sp_18"
             app:layout_constraintEnd_toEndOf="@id/scaleUp"
             app:layout_constraintStart_toStartOf="@id/scaleUp"
             app:layout_constraintBottom_toTopOf="@id/scaleUp"
@@ -258,10 +258,10 @@
 
         <ImageView
             android:id="@+id/scaleUp"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="21dp"
-            android:layout_marginEnd="26dp"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginStart="@dimen/dp_21"
+            android:layout_marginEnd="@dimen/dp_26"
             android:background="@drawable/ic_scale_up"
             android:gravity="center"
             android:rotation="0"
@@ -271,9 +271,9 @@
 
         <ImageView
             android:id="@+id/scaleDown"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_marginEnd="26dp"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginEnd="@dimen/dp_26"
             android:background="@drawable/ic_scale_down"
             android:gravity="center"
             android:visibility="visible"
@@ -285,8 +285,8 @@
 
         <ImageView
             android:id="@+id/btnMoveLeft"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
             android:background="@drawable/ic_arrow_move"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -296,8 +296,8 @@
 
         <ImageView
             android:id="@+id/btnMoveUp"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
             android:background="@drawable/ic_arrow_move"
             android:rotation="90"
             app:layout_constraintBottom_toTopOf="@id/btnMoveLeft"
@@ -305,8 +305,8 @@
 
         <ImageView
             android:id="@+id/btnMoveDown"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
             android:background="@drawable/ic_arrow_move"
             android:rotation="-90"
             app:layout_constraintStart_toEndOf="@id/btnMoveLeft"
@@ -314,8 +314,8 @@
 
         <ImageView
             android:id="@+id/btnSup"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_0"
             android:rotation="180"
             app:layout_constraintBottom_toTopOf="@id/btnMoveDown"
             app:layout_constraintEnd_toStartOf="@id/btnMoveRight"
@@ -324,8 +324,8 @@
 
         <ImageView
             android:id="@+id/btnMoveRight"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
             android:background="@drawable/ic_arrow_move"
             android:rotation="180"
 
@@ -346,26 +346,25 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/color"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dp_0"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginHorizontal="@dimen/dp_0"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_0"
         android:background="@color/transparent"
-        android:elevation="1dp"
         android:orientation="horizontal"
         android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@id/btnMove"
         app:layout_constraintStart_toEndOf="@id/btnRandom"
-        app:layout_constraintTop_toBottomOf="@id/glHorizontal"
+        app:layout_constraintTop_toTopOf="@id/btnRandom"
+        app:layout_constraintBottom_toBottomOf="@id/btnRandom"
         tools:visibility="visible">
         <!--    btnColor-->
         <ImageView
             android:id="@+id/btnColor"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
             android:src="@drawable/ic_color"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -376,11 +375,10 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/flColor"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/dp_0"
             android:layout_height="wrap_content"
-            android:layout_marginStart="7dp"
-            android:layout_marginEnd="0dp"
-            android:elevation="1dp"
+            android:layout_marginStart="@dimen/dp_7"
+            android:layout_marginEnd="@dimen/dp_0"
             android:gravity="start"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="@+id/btnColor"
@@ -394,19 +392,19 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:cardBackgroundColor="#E4E0E0"
-                app:cardCornerRadius="30dp"
+                app:cardCornerRadius="@dimen/dp_30"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:strokeColor="#38306B"
-                app:strokeWidth="2dp">
+                app:strokeWidth="@dimen/dp_2">
 
 
                 <RelativeLayout
                     android:id="@+id/relative"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="8dp">
+                    android:layout_marginVertical="@dimen/dp_8">
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rcvColor"
@@ -414,7 +412,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:layout_gravity="center"
-                        android:layout_marginHorizontal="4dp"
+                        android:layout_marginHorizontal="@dimen/dp_4"
                         android:clipToPadding="false"
                         android:orientation="horizontal"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -433,13 +431,12 @@
 
     <ImageView
         android:id="@+id/btnRandom"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_16"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:elevation="2dp"
+        android:elevation="@dimen/dp_2"
         android:src="@drawable/ic_random"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
@@ -448,8 +445,8 @@
     <TextView
         android:id="@+id/bg_cus"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="61dp"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_61"
         android:background="#A7A6E2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/glHorizontal" />
@@ -459,13 +456,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvLayer"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="10dp"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_10"
         android:clipToPadding="false"
         android:layerType="hardware"
-        android:paddingHorizontal="9.5dp"
-        android:paddingBottom="80dp"
+        android:paddingHorizontal="@dimen/dp_9_5"
+        android:paddingBottom="@dimen/dp_80"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@id/bg_cus"
@@ -479,9 +476,9 @@
     <FrameLayout
         android:id="@+id/flBottomNav"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginHorizontal="@dimen/dp_0"
+        android:layout_marginBottom="@dimen/dp_0"
         android:background="#80A1DB"
         android:clipChildren="false"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -494,7 +491,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginHorizontal="15dp"
+            android:layout_marginHorizontal="@dimen/dp_15"
             android:clipChildren="false"
             android:clipToPadding="false"
             android:layerType="hardware"

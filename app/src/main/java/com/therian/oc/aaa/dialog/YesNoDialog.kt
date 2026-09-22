@@ -33,7 +33,7 @@ class YesNoDialog(
             binding.btnNo.gone()
             binding.btnYes.updateLayoutParams<LinearLayout.LayoutParams> {
                 weight = 0f
-                width = (144 * context.resources.displayMetrics.density).toInt()
+                width = context.resources.getDimensionPixelSize(R.dimen.dp_144)
             }
 
         }
@@ -45,7 +45,7 @@ class YesNoDialog(
         binding.containerDialog.setBackgroundResource(R.drawable.bg_dialog_delete_exit)
         binding.btnNo.setBackgroundResource(R.drawable.ic_no_dialog)
         binding.btnYes.setBackgroundResource(R.drawable.ic_yes_dialog)
-        val paddingVertical = (9 * context.resources.displayMetrics.density).toInt()
+        val paddingVertical = context.resources.getDimensionPixelSize(R.dimen.dp_9)
         binding.btnNo.setPadding(0, paddingVertical, 0, paddingVertical)
         binding.btnYes.setPadding(0, paddingVertical, 0, paddingVertical)
     }

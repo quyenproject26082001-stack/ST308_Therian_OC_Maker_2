@@ -11,7 +11,6 @@ import com.therian.oc.aaa.core.base.BaseDialog
 import com.therian.oc.aaa.core.extensions.select
 import com.therian.oc.aaa.core.extensions.tap
 import com.therian.oc.aaa.databinding.DialogColorPickerBinding
-import com.therian.oc.aaa.core.helper.UnitHelper
 
 
 class ChooseColorDialog(context: Context) : BaseDialog<DialogColorPickerBinding>(context,maxWidth = true, maxHeight = true) {
@@ -32,7 +31,7 @@ class ChooseColorDialog(context: Context) : BaseDialog<DialogColorPickerBinding>
                 hueSliderView = hueSlider
 
                 // Apply rounded corners programmatically
-                val radiusPx = UnitHelper.dpToPx(context, 8f)
+                val radiusPx = context.resources.getDimension(R.dimen.dp_8)
                 outlineProvider = object : ViewOutlineProvider() {
                     override fun getOutline(view: View, outline: Outline) {
                         outline.setRoundRect(0, 0, view.width, view.height, radiusPx)

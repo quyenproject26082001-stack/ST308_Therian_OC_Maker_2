@@ -5,24 +5,36 @@
     android:id="@+id/lnlSpeech"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="22dp"
+    android:layout_marginBottom="@dimen/dp_22"
     android:orientation="vertical"
     android:visibility="gone"
     tools:visibility="visible">
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="@dimen/dp_22"
         android:background="@drawable/bg_bg" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvCategory"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_32"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_category"
+        tools:visibility="visible" />
 
     <!--            rcvSticker-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvSpeech"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="74dp"
-        android:paddingHorizontal="20dp"
-        android:paddingBottom="60dp"
+        android:layout_marginTop="@dimen/dp_74"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_60"
         android:clipToPadding="false"
 
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

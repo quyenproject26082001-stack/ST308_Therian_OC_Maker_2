@@ -171,7 +171,7 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                 btnActionBarLeft.tap { confirmExit() }
                 btnActionBarCenterRight.tap {   handleReset() }
                 //btnActionBarCenterRightRight.tap { viewModel.setIsFlip() }
-                actionBar.btnActionBarRightText.tap(10) {
+                actionBar.btnActionBarRightText.tap(3000) {
                    checkInternet {   handleSave()}
                 }
                 btnActionBarCenterLeft.tap { viewModel.setIsFlip() }

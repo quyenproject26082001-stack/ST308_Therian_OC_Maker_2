@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_hseeight="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/bg_app"
     tools:context=".ui.cosplay.CosplayRandomActivity">
 
@@ -22,11 +22,11 @@
     <!--    cvImage-->
     <FrameLayout
         android:id="@+id/cvImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginHorizontal="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_18"
+        android:layout_marginBottom="@dimen/dp_16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,11 +38,11 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="2dp"
+            android:layout_margin="@dimen/dp_2"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="12dp"
+            app:cardCornerRadius="@dimen/dp_12"
             app:strokeColor="@color/figma_primary"
-            app:strokeWidth="2dp">
+            app:strokeWidth="@dimen/dp_2">
 
 
             <!--        sflShimmer-->
@@ -54,32 +54,35 @@
 
         </com.google.android.material.card.MaterialCardView>
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/guidRandom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
+            android:layout_margin="@dimen/dp_0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:visibility="gone"
             tools:visibility="visible">
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:strokeWidth="1dp"
-
-                app:strokeColor="@color/figma_primary"
-                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     </FrameLayout>
+
+
+
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="62dp"
+        android:layout_marginHorizontal="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_62"
         android:orientation="horizontal"
         android:weightSum="2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,11 +92,11 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/btnGenerate"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:layout_marginEnd="8dp"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginEnd="@dimen/dp_4"
             android:layout_weight="1"
             app:strokeColor="@color/figma_primary"
-            app:strokeWidth="2dp">
+            app:strokeWidth="@dimen/dp_2">
 
             <TextView
                 android:id="@+id/tvRandom"
@@ -103,23 +106,22 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/baloo_2_bold"
                 android:gravity="center"
-                android:paddingHorizontal="2dp"
+                android:paddingHorizontal="@dimen/dp_2"
                 android:text="@string/random"
                 android:textColor="@color/figma_primary"
 
-                android:textSize="16sp"
+                android:textSize="@dimen/sp_16"
                 android:visibility="visible" />
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/btnCosPlay"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:layout_marginStart="8dp"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginStart="@dimen/dp_4"
             android:layout_weight="1"
-            app:layout_constraintDimensionRatio="328:56"
             app:strokeColor="@color/figma_primary"
-            app:strokeWidth="2dp">
+            app:strokeWidth="@dimen/dp_2">
 
             <TextView
                 android:id="@+id/tvCosplay"
@@ -129,10 +131,10 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/baloo_2_bold"
                 android:gravity="center"
-                android:paddingHorizontal="2dp"
+                android:paddingHorizontal="@dimen/dp_2"
                 android:text="@string/playcos"
                 android:textColor="@color/figma_primary"
-                android:textSize="16sp"
+                android:textSize="@dimen/sp_16"
                 android:visibility="visible" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -157,7 +159,6 @@
         android:id="@+id/containerGuide"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="40dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -169,38 +170,37 @@
             android:id="@+id/titleGuide"
             style="@style/single_marquee"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="78dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="-24dp"
-            android:background="@drawable/bg_title"
-            android:elevation="3dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:elevation="@dimen/dp_3"
+            android:includeFontPadding="false"
             android:fontFamily="@font/baloo_2_bold"
             android:gravity="center"
-            android:paddingHorizontal="10dp"
+            android:paddingHorizontal="@dimen/dp_10"
             android:text="@string/instruction"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@id/bg_frame1"
+            android:textColor="@color/figma_primary"
+            android:textSize="@dimen/sp_24"
+            app:layout_constraintTop_toTopOf="@id/bg_frame1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/bg_frame1"
-            android:layout_width="328dp"
+            android:layout_width="@dimen/dp_328"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingTop="0dp"
+            android:paddingTop="@dimen/dp_0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@drawable/bg_frame"
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_0"
+                app:strokeColor="@color/figma_primary"
+                app:cardBackgroundColor="#EDEDFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -210,17 +210,17 @@
                 android:id="@+id/bg_frame"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/baloo_2_bold"
+                android:layout_marginTop="@dimen/dp_10"
+                android:fontFamily="@font/baloo2_regular"
                 android:gravity="center"
                 android:letterSpacing=".0"
                 android:lineSpacingMultiplier="1"
-                android:paddingHorizontal="15dp"
-                android:paddingTop="35dp"
-                android:paddingBottom="32dp"
+                android:paddingHorizontal="@dimen/dp_15"
+                android:paddingTop="@dimen/dp_60"
+                android:paddingBottom="@dimen/dp_20"
                 android:text="@string/guide_cosplay"
-                android:textColor="@color/app1"
-                android:textSize="16sp"
+                android:textColor="@color/figma_primary"
+                android:textSize="@dimen/sp_16"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -231,12 +231,12 @@
 
         <TextView
             android:id="@+id/btnCloseGuide"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
             android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginTop="29dp"
-            android:background="@drawable/ic_close_image"
-            android:elevation="3dp"
+            android:layout_marginTop="@dimen/dp_29"
+            android:background="@drawable/ic_close"
+            android:elevation="@dimen/dp_3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bg_frame1" />

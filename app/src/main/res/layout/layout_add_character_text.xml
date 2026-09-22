@@ -6,11 +6,11 @@
     android:id="@+id/scvText"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="22dp"
+    android:layout_marginBottom="@dimen/dp_22"
     android:clipChildren="false"
-    android:paddingBottom="0dp"
+    android:paddingBottom="@dimen/dp_0"
     android:isScrollContainer="true"
-    android:paddingTop="10dp"
+    android:paddingTop="@dimen/dp_10"
     android:scrollbars="none"
     android:visibility="gone"
     android:background="@drawable/bg_bg"
@@ -26,7 +26,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="@dimen/dp_8">
 
             <!-- Title: Text -->
             <TextView
@@ -38,27 +38,27 @@
                 android:visibility="gone"
                 android:text="@string/text"
                 android:textColor="#C13F74"
-                android:textSize="20sp" />
+                android:textSize="@dimen/sp_20" />
 
             <TextView
                 android:id="@+id/tvText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_0"
                 android:fontFamily="@font/baloo_2_bold"
                 android:gravity="start"
                 android:text="@string/text"
                 android:textColor="@color/app"
-                android:textSize="18sp" />
+                android:textSize="@dimen/sp_18" />
             <!--                    btnDoneText-->
             <ImageView
                 android:id="@+id/btnDoneText"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
                 android:layout_gravity="end|center_vertical"
-                android:layout_marginTop="-3dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="@dimen/dp_minus_3"
+                android:layout_marginEnd="@dimen/dp_16"
                 android:src="@drawable/ic_done_background" />
         </FrameLayout>
 
@@ -69,9 +69,9 @@
         <EditText
             android:id="@+id/edtText"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginHorizontal="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_10"
             android:background="@drawable/bg_edit_text"
             android:ellipsize="end"
             android:fontFamily="@font/fredoka"
@@ -79,37 +79,37 @@
             android:imeOptions="actionDone"
             android:inputType="text"
             android:maxLength="30"
-            android:paddingHorizontal="16dp"
+            android:paddingHorizontal="@dimen/dp_16"
             android:singleLine="true"
             android:textColor="@color/black"
             android:textColorHint="#80868686"
-            android:textSize="12sp" />
+            android:textSize="@dimen/sp_12" />
 
 
         <TextView
             android:id="@+id/tvFont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16"
             android:fontFamily="@font/baloo_2_bold"
             android:gravity="start"
             android:text="@string/font"
             android:textColor="@color/app"
-            android:textSize="18sp" />
+            android:textSize="@dimen/sp_18" />
 
         <!--            rcvFont-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcvFont"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginBottom="10dp"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginBottom="@dimen/dp_10"
             android:clipChildren="false"
             android:clipToPadding="true"
             android:orientation="horizontal"
-            android:paddingHorizontal="0.5dp"
+            android:paddingHorizontal="@dimen/dp_0_5"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@+id/titleFont"
             tools:listitem="@layout/item_font" />
@@ -118,22 +118,22 @@
             android:id="@+id/tvColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="-16dp"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_minus_16"
             android:fontFamily="@font/baloo_2_bold"
             android:gravity="start"
             android:text="@string/color_text"
             android:textColor="@color/app"
-            android:textSize="18sp" />
+            android:textSize="@dimen/sp_18" />
 
         <!--            rcvTextColor-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcvTextColor"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginVertical="10dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="6dp"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginVertical="@dimen/dp_10"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_6"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@+id/titleColor"
@@ -141,7 +141,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="16dp" />
+            android:layout_height="@dimen/dp_16" />
 
     </LinearLayout>
 </ScrollView>

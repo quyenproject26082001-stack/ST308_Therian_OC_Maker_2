@@ -2,40 +2,40 @@
 
     <style name="ShapeAppearance.LeftRoundedCard" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSizeTopLeft">28dp</item>
-        <item name="cornerSizeBottomLeft">28dp</item>
-        <item name="cornerSizeTopRight">0dp</item>
-        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeTopLeft">@dimen/dp_28</item>
+        <item name="cornerSizeBottomLeft">@dimen/dp_28</item>
+        <item name="cornerSizeTopRight">@dimen/dp_0</item>
+        <item name="cornerSizeBottomRight">@dimen/dp_0</item>
     </style>
     <!-- Base application theme. -->
-    <style name="Base.Theme.BaseProject" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.BaseProject" parent="Theme.Material3.Light.NoActionBar">
         <item name="android:windowTranslucentStatus">false</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowSoftInputMode">adjustResize</item>
     </style>
     <style name="CutCornerCardShape" parent="" tools:keep="@style/CutCornerCardShape">
         <item name="cornerFamily">cut</item>
-        <item name="cornerSize">12dp</item>
+        <item name="cornerSize">@dimen/dp_12</item>
     </style>
 
     <style name="border_image_5" parent="" tools:keep="@style/border_image_5">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">5dp</item>
+        <item name="cornerSize">@dimen/dp_5</item>
     </style>
 
     <style name="border_image_6" parent="" tools:keep="@style/border_image_6">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">4dp</item>
+        <item name="cornerSize">@dimen/dp_4</item>
     </style>
 
     <style name="border_image_99" parent="" tools:keep="@style/border_image_99">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">99dp</item>
+        <item name="cornerSize">@dimen/dp_99</item>
     </style>
 
     <style name="ShapeAppearanceOverlay.Pony.Rounded20" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">40dp</item>
+        <item name="cornerSize">@dimen/dp_40</item>
     </style>
 
     <style name="single_marquee">
@@ -49,7 +49,7 @@
     </style>
     <style name="RoundedImageView">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">25dp</item>
+        <item name="cornerSize">@dimen/dp_25</item>
     </style>
 
     <style name="Theme.BaseProject" parent="Base.Theme.BaseProject" />

@@ -328,8 +328,9 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
 
             // Delete All button - hidden initially, only shown in selection mode
             btnActionBarRight.setImageResource(R.drawable.ic_delete_creation)
-            btnActionBarRight.translationX = -6 * resources.displayMetrics.density
-            btnActionBarRight.translationY = 4 * resources.displayMetrics.density
+            btnActionBarRight.translationX = -resources.getDimension(R.dimen.dp_6)
+            btnActionBarNextRight.translationX = -resources.getDimension(R.dimen.dp_6)
+            btnActionBarRight.translationY = resources.getDimension(R.dimen.dp_0)
             btnActionBarRight.invisible()
         }
     }
@@ -547,7 +548,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         binding.actionBar.apply {
             btnActionBarNextRight.visible()
             btnActionBarNextRight.setImageResource(R.drawable.ic_delete_creation)
-            btnActionBarNextRight.translationY = -2 * resources.displayMetrics.density
+            btnActionBarNextRight.translationY = -resources.getDimension(R.dimen.dp_2)
             btnActionBarRight.visible()
             btnActionBarRight.setImageResource(R.drawable.ic_not_select_all)
             btnActionBarNextRight1.gone()
@@ -558,7 +559,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         // Design tab: hide lnlBottom (no whatsapp/telegram)
         if (viewModel.typeStatus.value == ValueKey.AVATAR_TYPE) {
             binding.lnlBottom.visible()
-            binding.lnlBottom.translationY = (15 * resources.displayMetrics.density)
+            binding.lnlBottom.translationY = resources.getDimension(R.dimen.dp_15)
         } else {
             binding.lnlBottom.gone()
         }
@@ -601,8 +602,8 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         btnRight?.visible()
 
         if (viewModel.typeStatus.value == ValueKey.AVATAR_TYPE) {
-            imgBgBtnLeft?.setImageResource(R.drawable.bg_btn_telegram)
-            imgBgBtnRight?.setImageResource(R.drawable.bg_btn_whatsapp)
+            imgBgBtnLeft?.setImageResource(R.drawable.bg_btn_telegram_shape)
+            imgBgBtnRight?.setImageResource(R.drawable.bg_btn_whatsapp_shape)
             tvLeft?.setText(R.string.add_to_telegram)
             tvRight?.setText(R.string.add_to_whatsapp)
 
@@ -631,13 +632,13 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     }
 
     private fun setupSelectedTab(textView: com.therian.oc.aaa.core.custom.text.OuterStrokeTextView) {
-        textView.setTextColor(Color.parseColor("#FFFFFF"))
+        textView.setTextColor(Color.parseColor("#38306B"))
         //textView.setShadowLayer(2f, 0f, 2f, Color.WHITE)
         //textView.setupSelectedTab()
     }
 
     private fun setupUnselectedTab(textView: com.therian.oc.aaa.core.custom.text.OuterStrokeTextView) {
-        textView.setTextColor(Color.parseColor("#39465A"))
+        textView.setTextColor(Color.parseColor("#38306B"))
         //textView.setupUnselectedTab()
     }
 

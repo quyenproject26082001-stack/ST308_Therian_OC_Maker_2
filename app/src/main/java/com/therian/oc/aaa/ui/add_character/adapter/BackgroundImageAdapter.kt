@@ -49,7 +49,7 @@ class BackgroundImageAdapter :
                 else -> {
                     imvImage.visible()
                     val cornerRadiusPx =
-                        (8 * root.context.resources.displayMetrics.density).toInt()
+                        root.resources.getDimensionPixelSize(R.dimen.dp_8)
                     val shimmerDrawable = ShimmerDrawable().apply {
                         setShimmer(DataLocal.shimmer)
                     }

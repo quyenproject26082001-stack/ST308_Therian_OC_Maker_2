@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/cvMain"
-    android:layout_width="40dp"
-    android:layout_height="40dp"
-    android:layout_marginHorizontal="6dp"
+    android:layout_width="@dimen/dp_40"
+    android:layout_height="@dimen/dp_40"
+    android:layout_marginHorizontal="@dimen/dp_6"
     android:background="@drawable/bg_circle_white">
 
     <TextView
@@ -13,6 +13,6 @@
         android:gravity="center"
         android:text="Aa"
         android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:textSize="@dimen/sp_18" />
 
 </FrameLayout>

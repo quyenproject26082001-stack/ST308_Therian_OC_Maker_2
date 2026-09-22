@@ -151,7 +151,6 @@ class CosplayCustomizeActivity : BaseActivity<ActivityCosplayCustomizeBinding>()
             tvCenter.gone()
 
             btnActionBarCenter.invisible()
-            btnActionBarRight.visible()
         }
     }
 
@@ -621,10 +620,6 @@ class CosplayCustomizeActivity : BaseActivity<ActivityCosplayCustomizeBinding>()
                 Intent(this@CosplayCustomizeActivity, CosplaySuccessfulActivity::class.java).apply {
                     putExtra(IntentKey.COSPLAY_RESULT_PATH_KEY, savedPath)
                     putExtra(IntentKey.COSPLAY_PROGRESS_KEY, currentProgress)
-                    putExtra(
-                        IntentKey.COSPLAY_TARGET_IMAGE_PATH_KEY,
-                        suggestionModel.pathInternalRandom
-                    )
                     putExtra(
                         IntentKey.COSPLAY_CHARACTER_POSITION_KEY,
                         viewModel.positionSelected

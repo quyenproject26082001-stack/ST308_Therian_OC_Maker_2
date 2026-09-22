@@ -19,6 +19,7 @@ import com.therian.oc.aaa.core.utils.key.AssetsKey
 import com.therian.oc.aaa.core.utils.key.DomainKey
 import com.therian.oc.aaa.core.utils.key.ValueKey
 import com.therian.oc.aaa.core.utils.state.SaveState
+import com.therian.oc.aaa.data.model.AddCharacterCategoryModel
 import com.therian.oc.aaa.data.model.SelectedModel
 import com.therian.oc.aaa.data.model.draw.Draw
 import com.therian.oc.aaa.data.model.draw.DrawableDraw
@@ -62,8 +63,11 @@ class AddCharacterViewModel : ViewModel() {
 
 
     var backgroundImageList: ArrayList<SelectedModel> = arrayListOf()
+    var backgroundCategoryList: ArrayList<AddCharacterCategoryModel> = arrayListOf()
     var backgroundColorList: ArrayList<SelectedModel> = arrayListOf()
+    var stickerCategoryList: ArrayList<AddCharacterCategoryModel> = arrayListOf()
     var stickerList: ArrayList<SelectedModel> = arrayListOf()
+    var speechCategoryList: ArrayList<AddCharacterCategoryModel> = arrayListOf()
     var speechList: ArrayList<SelectedModel> = arrayListOf()
     var textFontList: ArrayList<SelectedModel> = arrayListOf()
     var textColorList: ArrayList<SelectedModel> = arrayListOf()
@@ -86,6 +90,7 @@ class AddCharacterViewModel : ViewModel() {
     var originalMarginBottom: Int = 0
 
     var pathDefault = ""
+    private var selectedBackgroundImagePath: String? = AssetsKey.NONE_LAYER
 
     fun setTypeNavigation(type: Int) {
         _typeNavigation.value = type
@@ -100,22 +105,61 @@ class AddCharacterViewModel : ViewModel() {
     }
 
     suspend fun loadDataDefault(context: Context) {
+        selectedBackgroundImagePath = AssetsKey.NONE_LAYER
+        backgroundCategoryList.clear()
+        backgroundCategoryList.addAll(
+            RemoteAssetHelper.getCategoryRemoteAssets(
+                jsonUrl = DomainKey.ADD_CHARACTER_CATEGORY_JSON,
+                rootUrl = DomainKey.ADD_CHARACTER_CATEGORY_ROOT,
+                groupName = AssetsKey.BACKGROUND_ASSET,
+                extensions = backgroundConfig.extensions
+            )
+        )
+
         backgroundImageList.clear()
-        backgroundImageList.addAll(loadAssetOptions(context, backgroundConfig))
+        val firstCategoryItems = backgroundCategoryList.firstOrNull()?.items
+        backgroundImageList.addAll(
+            if (firstCategoryItems != null) {
+                addBackgroundPickerItems(firstCategoryItems)
+            } else {
+                loadAssetOptions(context, backgroundConfig)
+            }
+        )
 
 
         backgroundColorList.clear()
         backgroundColorList.addAll(DataLocal.getBackgroundColorDefault(context))
 
 
+        stickerCategoryList.clear()
+        stickerCategoryList.addAll(
+            RemoteAssetHelper.getCategoryRemoteAssets(
+                jsonUrl = DomainKey.ADD_CHARACTER_CATEGORY_JSON,
+                rootUrl = DomainKey.ADD_CHARACTER_CATEGORY_ROOT,
+                groupName = AssetsKey.STICKER_ASSET,
+                extensions = stickerConfig.extensions
+            )
+        )
         stickerList.clear()
-        stickerList.addAll(loadAssetOptions(context, stickerConfig))
+        stickerList.addAll(
+            stickerCategoryList.firstOrNull()?.items ?: loadAssetOptions(context, stickerConfig)
+        )
 
-
-
+        speechCategoryList.clear()
+        speechCategoryList.addAll(
+            RemoteAssetHelper.getCategoryRemoteAssets(
+                jsonUrl = DomainKey.ADD_CHARACTER_CATEGORY_JSON,
+                rootUrl = DomainKey.ADD_CHARACTER_CATEGORY_ROOT,
+                groupName = "SpeechBubbles",
+                extensions = speechConfig.extensions
+            )
+        )
         speechList.clear()
         speechList.addAll(
-            AssetHelper.getSubfoldersAsset(context, AssetsKey.SPEECH_ASSET).map { SelectedModel(path = it) })
+            speechCategoryList.firstOrNull()?.items
+                ?: AssetHelper.getSubfoldersAsset(context, AssetsKey.SPEECH_ASSET)
+                    .map { SelectedModel(path = it) }
+        )
 
         textFontList.clear()
         textFontList.addAll(DataLocal.getTextFontDefault())
@@ -172,8 +216,54 @@ class AddCharacterViewModel : ViewModel() {
         return items
     }
 
+    fun updateBackgroundCategorySelected(position: Int) {
+        val category = backgroundCategoryList.getOrNull(position) ?: return
+        backgroundCategoryList.forEachIndexed { index, model ->
+            model.isSelected = index == position
+        }
+        backgroundImageList.clear()
+        backgroundImageList.addAll(
+            addBackgroundPickerItems(category.items, selectedBackgroundImagePath)
+        )
+    }
+
+    fun updateStickerCategorySelected(position: Int) {
+        val category = stickerCategoryList.getOrNull(position) ?: return
+        stickerCategoryList.forEachIndexed { index, model ->
+            model.isSelected = index == position
+        }
+        stickerList.clear()
+        stickerList.addAll(category.items)
+    }
+
+    fun updateSpeechCategorySelected(position: Int) {
+        val category = speechCategoryList.getOrNull(position) ?: return
+        speechCategoryList.forEachIndexed { index, model ->
+            model.isSelected = index == position
+        }
+        speechList.clear()
+        speechList.addAll(category.items)
+    }
+
+    private fun addBackgroundPickerItems(
+        items: List<SelectedModel>,
+        selectedPath: String? = AssetsKey.NONE_LAYER
+    ): ArrayList<SelectedModel> {
+        return ArrayList<SelectedModel>(items.size + 2).apply {
+            add(SelectedModel(isSelected = selectedPath == ""))
+            add(
+                SelectedModel(
+                    path = AssetsKey.NONE_LAYER,
+                    isSelected = selectedPath == AssetsKey.NONE_LAYER
+                )
+            )
+            addAll(items.map { it.copy(isSelected = it.path == selectedPath) })
+        }
+    }
+
 
     suspend fun updateBackgroundImageSelected(position: Int) {
+        selectedBackgroundImagePath = backgroundImageList.getOrNull(position)?.path
         backgroundColorList = backgroundColorList.map { it.copy(isSelected = false) }.toCollection(ArrayList())
         backgroundImageList.forEachIndexed { index, model ->
             model.isSelected = index == position
@@ -181,6 +271,7 @@ class AddCharacterViewModel : ViewModel() {
     }
 
     suspend fun updateBackgroundColorSelected(position: Int) {
+        selectedBackgroundImagePath = null
         Log.d("AddCharacterViewModel", "updateBackgroundColorSelected called with position=$position")
         Log.d("AddCharacterViewModel", "Before update: backgroundColorList[0].color=${String.format("#%06X", 0xFFFFFF and backgroundColorList[0].color)}, isSelected=${backgroundColorList[0].isSelected}")
 
@@ -222,6 +313,7 @@ class AddCharacterViewModel : ViewModel() {
     }
 
     fun resetSelectionState() {
+        selectedBackgroundImagePath = AssetsKey.NONE_LAYER
         backgroundImageList.forEach { it.isSelected = false }
         backgroundImageList.getOrNull(1)?.isSelected = true
         backgroundColorList.forEach { it.isSelected = false }

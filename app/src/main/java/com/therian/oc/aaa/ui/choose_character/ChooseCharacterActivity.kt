@@ -177,8 +177,8 @@ class ChooseCharacterActivity : BaseActivity<ActivityChooseCharacterBinding>() {
             tvCenter.setText(R.string.category)
             tvCenter.updateLayoutParams<ConstraintLayout.LayoutParams> {
                 width = 0
-                marginStart = (20*resources.displayMetrics.density).toInt()
-                marginEnd = (20*resources.displayMetrics.density).toInt()
+                marginStart = resources.getDimensionPixelSize(R.dimen.dp_20)
+                marginEnd = resources.getDimensionPixelSize(R.dimen.dp_20)
             }
             setTextActionBar(tvCenter, getString(R.string.category))
             tvCenter.select()

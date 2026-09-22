@@ -23,12 +23,11 @@
     <!--    cvImage-->
     <FrameLayout
         android:id="@+id/cvImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/frame_it_random"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginHorizontal="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_0"
+        android:layout_marginBottom="@dimen/dp_16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,35 +38,17 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="15dp"
-            app:cardBackgroundColor="#586B8C"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintDimensionRatio="156:152"
-            app:strokeColor="@color/transparent">
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="@dimen/dp_12"
+            app:layout_constraintDimensionRatio="1:1"
+            app:strokeColor="@color/figma_primary">
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="3dp"
-                app:cardBackgroundColor="@color/app1"
-                app:cardCornerRadius="7dp"
-                app:strokeColor="@color/transparent">
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="1dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="7.dp"
-                    app:strokeColor="@color/transparent">
 
                     <ImageView
                         android:id="@+id/imvImage"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="0dp"
+                        android:layout_margin="@dimen/dp_0"
                         android:scaleType="fitCenter" />
 
 
@@ -75,27 +56,23 @@
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_margin="0dp"
+                            android:layout_margin="@dimen/dp_0"
                             android:id="@+id/guidRandom"
                             android:background="@drawable/guide_random" />
                 </com.google.android.material.card.MaterialCardView>
 
-
-            </com.google.android.material.card.MaterialCardView>
-        </com.google.android.material.card.MaterialCardView>
 
     </FrameLayout>
 
 
     <FrameLayout
         android:id="@+id/btnGenerate"
-        android:layout_width="0dp"
-        android:layout_height="44dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/bg_frame_per"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_44"
+        android:layout_marginStart="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_68"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:background="@drawable/bg_12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnEdit"
         app:layout_constraintTop_toBottomOf="@id/cvImage">
@@ -106,13 +83,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="@dimen/dp_30"
+            android:layout_marginEnd="@dimen/dp_30"
             android:fontFamily="@font/baloo_2_bold"
             android:gravity="center"
             android:text="@string/generate"
-            android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textColor="@color/figma_primary"
+            android:textSize="@dimen/sp_16"
             android:visibility="visible" />
 
     </FrameLayout>
@@ -120,12 +97,12 @@
 
     <FrameLayout
         android:id="@+id/btnEdit"
-        android:layout_width="0dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/bg_frame_per"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_44"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_68"
+        android:layout_marginEnd="@dimen/dp_4"
+        android:background="@drawable/bg_12dp"
         app:layout_constraintEnd_toStartOf="@id/btnGenerate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cvImage">
@@ -136,13 +113,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="@dimen/dp_30"
+            android:layout_marginEnd="@dimen/dp_30"
             android:fontFamily="@font/baloo_2_bold"
             android:gravity="center"
             android:text="@string/edit"
-            android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textColor="@color/figma_primary"
+            android:textSize="@dimen/sp_16"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

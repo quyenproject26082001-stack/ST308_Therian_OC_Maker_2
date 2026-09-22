@@ -2,6 +2,7 @@ package com.therian.oc.aaa.ui.trending
 
 import android.app.ActivityOptions
 import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.view.LayoutInflater
 import android.view.View
@@ -46,12 +47,14 @@ import com.therian.oc.aaa.ui.random_character.RandomCharacterViewModel
 import com.lvt.ads.util.Admob
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeout
@@ -371,16 +374,14 @@ class TrendingActivity : BaseActivity<ActivityTrendingBinding>() {
                         return@launch
                     }
 
-                    val bitmapDefault = Glide.with(this@TrendingActivity)
-                        .asBitmap().load(paths.first()).submit().get()
-                    val width = bitmapDefault.width / 2
-                    val height = bitmapDefault.height / 2
+                    val bitmapDefault = loadLayerWithRetry(paths.first())
+                    val width = (bitmapDefault.width / 2).coerceAtLeast(1)
+                    val height = (bitmapDefault.height / 2).coerceAtLeast(1)
 
                     val listBitmap = coroutineScope {
                         paths.map { path ->
                             async {
-                                Glide.with(this@TrendingActivity)
-                                    .asBitmap().load(path).submit(width, height).get()
+                                loadLayerWithRetry(path, width, height)
                             }
                         }.awaitAll()
                     }
@@ -437,6 +438,42 @@ class TrendingActivity : BaseActivity<ActivityTrendingBinding>() {
             }
         }
 
+        private suspend fun loadLayerWithRetry(
+            path: String,
+            width: Int? = null,
+            height: Int? = null
+        ): Bitmap {
+            var lastError: Exception? = null
+
+            repeat(MAX_LAYER_LOAD_ATTEMPTS) { attempt ->
+                try {
+                    val request = Glide.with(this@TrendingActivity)
+                        .asBitmap()
+                        .load(path)
+                    return if (width != null && height != null) {
+                        request.submit(width, height).get()
+                    } else {
+                        request.submit().get()
+                    }
+                } catch (exception: CancellationException) {
+                    throw exception
+                } catch (exception: Exception) {
+                    lastError = exception
+                    android.util.Log.w(
+                        "TrendingDebug",
+                        "Layer load failed ${attempt + 1}/$MAX_LAYER_LOAD_ATTEMPTS " +
+                            "path='$path' size=${width ?: "original"}x${height ?: "original"}",
+                        exception
+                    )
+                    if (attempt < MAX_LAYER_LOAD_ATTEMPTS - 1) {
+                        delay(RETRY_DELAY_MS * (attempt + 1))
+                    }
+                }
+            }
+
+            throw lastError ?: IllegalStateException("Unable to load layer: $path")
+        }
+
         private fun glideListener(onComplete: (() -> Unit)?): RequestListener<android.graphics.drawable.Drawable> {
             return object : RequestListener<android.graphics.drawable.Drawable> {
                 override fun onLoadFailed(
@@ -469,6 +506,11 @@ class TrendingActivity : BaseActivity<ActivityTrendingBinding>() {
                     return false
                 }
             }
+        }
+
+        companion object {
+            private const val MAX_LAYER_LOAD_ATTEMPTS = 3
+            private const val RETRY_DELAY_MS = 400L
         }
 
         private fun handleEdit() {

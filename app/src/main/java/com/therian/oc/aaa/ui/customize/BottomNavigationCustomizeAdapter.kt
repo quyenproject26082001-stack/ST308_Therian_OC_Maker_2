@@ -20,7 +20,6 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.facebook.shimmer.ShimmerDrawable
-import com.therian.oc.aaa.core.extensions.dp
 import com.therian.oc.aaa.core.extensions.setMargins
 import com.therian.oc.aaa.core.extensions.tap
 import com.therian.oc.aaa.core.utils.DataLocal
@@ -73,7 +72,8 @@ class BottomNavigationCustomizeAdapter(private val context: Context) :
             // Cancel any running animations to prevent jumps when recycling views
             cvContent.animate().cancel()
 
-            binding.main.setMargins(4.dp(context), 0, 4.dp(context), 0)
+            val horizontalMargin = context.resources.getDimensionPixelSize(R.dimen.dp_4)
+            binding.main.setMargins(horizontalMargin, 0, horizontalMargin, 0)
 
             if (item.isSelected) {
                 imvImage.setBackgroundColor(Color.TRANSPARENT)

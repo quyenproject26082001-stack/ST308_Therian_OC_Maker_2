@@ -15,6 +15,7 @@ import android.graphics.drawable.BitmapDrawable
 import android.util.AttributeSet
 import android.view.MotionEvent
 import androidx.appcompat.widget.AppCompatImageView
+import com.therian.oc.aaa.R
 import java.io.ByteArrayOutputStream
 import kotlin.math.roundToInt
 
@@ -58,7 +59,7 @@ class CropView : AppCompatImageView {
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
-        cornerRadius = 12f * resources.displayMetrics.density
+        cornerRadius = resources.getDimension(R.dimen.dp_12)
     }
 
     override fun onDraw(canvas: Canvas) {

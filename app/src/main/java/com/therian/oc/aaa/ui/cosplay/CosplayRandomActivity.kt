@@ -37,11 +37,13 @@ import com.therian.oc.aaa.ui.home.DataViewModel
 import com.lvt.ads.util.Admob
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -175,16 +177,14 @@ class CosplayRandomActivity : BaseActivity<ActivityCosplayRandomBinding>() {
                     return@launch
                 }
 
-                val firstBitmap = Glide.with(this@CosplayRandomActivity)
-                    .asBitmap().load(paths.first()).submit().get()
-                val w = firstBitmap.width / 2
-                val h = firstBitmap.height / 2
+                val firstBitmap = loadLayerWithRetry(paths.first())
+                val w = (firstBitmap.width / 2).coerceAtLeast(1)
+                val h = (firstBitmap.height / 2).coerceAtLeast(1)
 
                 val bitmaps = coroutineScope {
                     paths.map { path ->
                         async {
-                            Glide.with(this@CosplayRandomActivity)
-                                .asBitmap().load(path).submit(w, h).get()
+                            loadLayerWithRetry(path, w, h)
                         }
                     }.awaitAll()
                 }
@@ -219,9 +219,50 @@ class CosplayRandomActivity : BaseActivity<ActivityCosplayRandomBinding>() {
         }
     }
 
+    private suspend fun loadLayerWithRetry(
+        path: String,
+        width: Int? = null,
+        height: Int? = null
+    ): Bitmap {
+        var lastError: Exception? = null
+
+        repeat(MAX_LAYER_LOAD_ATTEMPTS) { attempt ->
+            try {
+                val request = Glide.with(this@CosplayRandomActivity)
+                    .asBitmap()
+                    .load(path)
+                return if (width != null && height != null) {
+                    request.submit(width, height).get()
+                } else {
+                    request.submit().get()
+                }
+            } catch (exception: CancellationException) {
+                throw exception
+            } catch (exception: Exception) {
+                lastError = exception
+                android.util.Log.w(
+                    "CosplayRandom",
+                    "Layer load failed ${attempt + 1}/$MAX_LAYER_LOAD_ATTEMPTS " +
+                        "path='$path' size=${width ?: "original"}x${height ?: "original"}",
+                    exception
+                )
+                if (attempt < MAX_LAYER_LOAD_ATTEMPTS - 1) {
+                    delay(RETRY_DELAY_MS * (attempt + 1))
+                }
+            }
+        }
+
+        throw lastError ?: IllegalStateException("Unable to load layer: $path")
+    }
+
     private fun setCosPlayButtonEnabled(enabled: Boolean) {
         binding.btnCosPlay.isEnabled = enabled
         binding.btnCosPlay.alpha = if (enabled) 1f else 0.4f
+    }
+
+    companion object {
+        private const val MAX_LAYER_LOAD_ATTEMPTS = 3
+        private const val RETRY_DELAY_MS = 400L
     }
 
     private fun handlePlay() {

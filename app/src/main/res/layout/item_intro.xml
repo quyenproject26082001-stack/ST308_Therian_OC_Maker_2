@@ -8,32 +8,33 @@
     <ImageView
         android:id="@+id/imvImage"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/dp_0"
         android:contentDescription="@null"
         android:importantForAccessibility="no"
         android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:src="@drawable/img_intro_1"
-        app:layout_constraintDimensionRatio="360:550"
+        android:layout_marginBottom="@dimen/dp_50"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
         android:id="@+id/tvContent"
-        android:layout_width="0dp"
-        android:layout_height="54dp"
-        android:layout_marginHorizontal="16dp"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_16"
         android:fontFamily="@font/baloo_2_bold"
         android:gravity="center"
         android:includeFontPadding="false"
         android:maxLines="2"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="@dimen/sp_18"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imvImage"
-        app:outerStrokeColor="#FF38306B"
-        app:outerStrokeWidth="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:outerStrokeColor="#38306B"
+        app:outerStrokeWidth="@dimen/dp_1"
         tools:text="Create your own avatar however you like" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

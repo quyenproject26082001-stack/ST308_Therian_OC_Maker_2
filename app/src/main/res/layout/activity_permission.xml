@@ -25,9 +25,9 @@
 
     <ImageView
         android:id="@+id/imgPermission"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="102dp"
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_200"
+        android:layout_marginTop="@dimen/dp_102"
         android:contentDescription="@null"
         android:importantForAccessibility="no"
         android:scaleType="fitCenter"
@@ -38,38 +38,38 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/txtPermission"
-        android:layout_width="0dp"
-        android:layout_height="44dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_44"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgPermission">
 
         <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
             android:id="@+id/txtPer"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/dp_0"
             android:layout_height="match_parent"
             android:fontFamily="@font/baloo_2_bold"
             android:gravity="center"
             android:includeFontPadding="false"
             android:maxLines="2"
             android:textColor="@color/white"
-            android:textSize="15sp"
+            android:textSize="@dimen/sp_15"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:outerStrokeColor="@color/transparent"
-            app:outerStrokeWidth="0dp"
+            app:outerStrokeWidth="@dimen/dp_0"
             tools:text="Allow Therian OC Maker to access photos, media and files on your device" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <RelativeLayout
         android:id="@+id/btnStorage"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_56"
+        android:layout_marginHorizontal="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_8"
         android:background="@drawable/bg_language_selected_v2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,33 +77,33 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="24dp"
+            android:layout_height="@dimen/dp_24"
             android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="@dimen/dp_20"
             android:fontFamily="@font/baloo_2_bold"
             android:gravity="center_vertical"
             android:includeFontPadding="false"
             android:text="Media"
             android:textColor="@color/figma_primary"
-            android:textSize="18sp" />
+            android:textSize="@dimen/sp_18" />
 
         <ImageView
             android:id="@+id/swPermission"
-            android:layout_width="40dp"
-            android:layout_height="24dp"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_24"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="@dimen/dp_20"
             android:contentDescription="@string/storage"
             android:src="@drawable/bg_permission_switch_off" />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/btnNotification"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_56"
+        android:layout_marginHorizontal="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_8"
         android:background="@drawable/bg_language_selected_v2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,38 +111,38 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="24dp"
+            android:layout_height="@dimen/dp_24"
             android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="@dimen/dp_20"
             android:fontFamily="@font/baloo_2_bold"
             android:gravity="center_vertical"
             android:includeFontPadding="false"
             android:text="Media"
             android:textColor="@color/figma_primary"
-            android:textSize="18sp" />
+            android:textSize="@dimen/sp_18" />
 
         <ImageView
             android:id="@+id/swNotification"
-            android:layout_width="40dp"
-            android:layout_height="24dp"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_24"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="@dimen/dp_20"
             android:contentDescription="@string/notification"
             android:src="@drawable/bg_permission_switch_off" />
     </RelativeLayout>
 
     <TextView
         android:id="@+id/tvContinue"
-        android:layout_width="148dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="34dp"
+        android:layout_width="@dimen/dp_148"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_34"
         android:fontFamily="@font/baloo_2_bold"
         android:gravity="center"
         android:includeFontPadding="false"
         android:text="@string/continue_per"
         android:textColor="@color/figma_primary"
-        android:textSize="20sp"
+        android:textSize="@dimen/sp_20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/permissionButtonsBottom" />
