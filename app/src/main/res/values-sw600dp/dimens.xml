@@ -116,4 +116,5 @@
     <dimen name="sp_40">60sp</dimen>
     <dimen name="_220dp">330dp</dimen>
     <dimen name="dp_90">135dp</dimen>
+    <dimen name="tablet">40dp</dimen>
 </resources>

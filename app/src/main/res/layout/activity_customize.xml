@@ -389,7 +389,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/relativeLayout"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/dp_40"
                 android:orientation="vertical"
                 app:cardBackgroundColor="#E4E0E0"
                 app:cardCornerRadius="@dimen/dp_30"
@@ -403,8 +403,7 @@
                 <RelativeLayout
                     android:id="@+id/relative"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginVertical="@dimen/dp_8">
+                    android:layout_height="match_parent">
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rcvColor"
@@ -446,10 +445,10 @@
         android:id="@+id/bg_cus"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_0"
-        android:layout_marginTop="@dimen/dp_61"
+        android:layout_marginTop="@dimen/dp_12"
         android:background="#A7A6E2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/glHorizontal" />
+        app:layout_constraintTop_toBottomOf="@id/btnRandom" />
 
 
     <!--    rcvLayer-->

@@ -187,14 +187,13 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.therian.oc.aaa.core.custom.layout.InstagramGradientLayout
         android:id="@+id/btnInstagram"
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_44"
         android:layout_marginStart="@dimen/dp_4"
         android:layout_marginTop="@dimen/dp_8"
         android:layout_marginEnd="@dimen/dp_20"
-        android:background="@drawable/frame_inst_gradient"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/GLCenter"
         app:layout_constraintTop_toBottomOf="@id/lnlShareButtons">
@@ -228,6 +227,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.therian.oc.aaa.core.custom.layout.InstagramGradientLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

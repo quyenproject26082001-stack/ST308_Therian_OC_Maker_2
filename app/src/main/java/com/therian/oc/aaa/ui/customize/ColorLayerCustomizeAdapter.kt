@@ -5,6 +5,7 @@ import android.graphics.drawable.GradientDrawable
 import androidx.core.graphics.toColorInt
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.therian.oc.aaa.R
 import com.therian.oc.aaa.core.base.BaseAdapter
 import com.therian.oc.aaa.core.extensions.tap
 import com.therian.oc.aaa.data.model.custom.ItemColorModel
@@ -15,6 +16,13 @@ class ColorLayerCustomizeAdapter(val context: Context) :
     var onItemClick: ((Int) -> Unit) = {}
     override fun onBind(binding: ItemColorBinding, item: ItemColorModel, position: Int) {
         binding.apply {
+            val colorSize = root.resources.getDimensionPixelSize(
+                if (item.isSelected) R.dimen.dp_28 else R.dimen.dp_24
+            )
+            imvImage.layoutParams = imvImage.layoutParams.apply {
+                width = colorSize
+                height = colorSize
+            }
             imvImage.background = GradientDrawable().apply {
                 shape = GradientDrawable.OVAL
                 setColor(item.color.toColorInt())

@@ -27,21 +27,21 @@
         android:id="@+id/imgPermission"
         android:layout_width="@dimen/dp_200"
         android:layout_height="@dimen/dp_200"
-        android:layout_marginTop="@dimen/dp_102"
+        android:layout_marginTop="0dp"
         android:contentDescription="@null"
         android:importantForAccessibility="no"
         android:scaleType="fitCenter"
         android:src="@drawable/img_permission_figma"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/layoutActionBar"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/txtPermission"
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_44"
         android:layout_marginHorizontal="@dimen/dp_16"
-        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgPermission">
@@ -136,7 +136,7 @@
         android:id="@+id/tvContinue"
         android:layout_width="@dimen/dp_148"
         android:layout_height="@dimen/dp_40"
-        android:layout_marginTop="@dimen/dp_34"
+        android:layout_marginTop="@dimen/dp_51"
         android:fontFamily="@font/baloo_2_bold"
         android:gravity="center"
         android:includeFontPadding="false"

@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.graphics.drawable.toDrawable
 import androidx.lifecycle.ViewModel
+import com.therian.oc.aaa.R
 import com.therian.oc.aaa.core.helper.AssetHelper
 import com.therian.oc.aaa.core.helper.BitmapHelper
 import com.therian.oc.aaa.core.helper.InternetHelper
@@ -144,6 +145,15 @@ class AddCharacterViewModel : ViewModel() {
         stickerList.addAll(
             stickerCategoryList.firstOrNull()?.items ?: loadAssetOptions(context, stickerConfig)
         )
+        if (stickerCategoryList.isEmpty() && stickerList.isNotEmpty()) {
+            stickerCategoryList.add(
+                AddCharacterCategoryModel(
+                    name = context.getString(R.string.sticker),
+                    items = ArrayList(stickerList),
+                    isSelected = true
+                )
+            )
+        }
 
         speechCategoryList.clear()
         speechCategoryList.addAll(
@@ -154,11 +164,23 @@ class AddCharacterViewModel : ViewModel() {
                 extensions = speechConfig.extensions
             )
         )
+        if (speechCategoryList.isEmpty()) {
+            val localSpeech = AssetHelper.getSubfoldersAsset(context, AssetsKey.SPEECH_ASSET)
+                .map { SelectedModel(path = it) }
+                .toCollection(ArrayList())
+            if (localSpeech.isNotEmpty()) {
+                speechCategoryList.add(
+                    AddCharacterCategoryModel(
+                        name = context.getString(R.string.speech_bubbles),
+                        items = localSpeech,
+                        isSelected = true
+                    )
+                )
+            }
+        }
         speechList.clear()
         speechList.addAll(
-            speechCategoryList.firstOrNull()?.items
-                ?: AssetHelper.getSubfoldersAsset(context, AssetsKey.SPEECH_ASSET)
-                    .map { SelectedModel(path = it) }
+            speechCategoryList.firstOrNull()?.items.orEmpty()
         )
 
         textFontList.clear()

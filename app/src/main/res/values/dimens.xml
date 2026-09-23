@@ -115,5 +115,6 @@
     <dimen name="sp_28">28sp</dimen>
     <dimen name="sp_40">40sp</dimen>
     <dimen name="_220dp">220dp</dimen>
-    <dimen name="dp_90">135dp</dimen>
+    <dimen name="dp_90">90dp</dimen>
+    <dimen name="tablet">16dp</dimen>
 </resources>

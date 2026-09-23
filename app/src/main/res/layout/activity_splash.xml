@@ -31,7 +31,7 @@
         android:id="@+id/imgSplashAvatar"
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_0"
-        android:layout_marginHorizontal="@dimen/dp_16"
+        android:layout_marginHorizontal="@dimen/tablet"
         android:layout_marginTop="@dimen/dp_32"
         android:contentDescription="@null"
         android:importantForAccessibility="no"

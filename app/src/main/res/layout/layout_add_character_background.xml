@@ -85,9 +85,10 @@
         android:id="@+id/lnlBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/dp_62"
+        android:layout_marginTop="@dimen/dp_48"
         android:layout_marginBottom="@dimen/dp_25"
         android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
         android:visibility="gone"
         tools:visibility="visible">
 
@@ -111,8 +112,7 @@
             android:layout_weight="1"
             android:layout_marginTop="@dimen/dp_4_5"
             android:clipToPadding="false"
-            android:paddingHorizontal="@dimen/dp_7_5"
-            android:paddingBottom="@dimen/dp_60"
+            android:paddingHorizontal="@dimen/dp_18"            android:paddingBottom="@dimen/dp_60"
             android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="5"
@@ -129,7 +129,7 @@
             android:layout_weight="1"
             android:layout_marginTop="@dimen/dp_4_5"
             android:clipToPadding="false"
-            android:paddingHorizontal="@dimen/dp_7_5"
+            android:paddingHorizontal="@dimen/dp_18"
             android:paddingBottom="@dimen/dp_60"
             android:visibility="gone"
 

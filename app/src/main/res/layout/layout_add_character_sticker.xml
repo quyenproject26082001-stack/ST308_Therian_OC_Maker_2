@@ -18,7 +18,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvCategory"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_32"
+        android:layout_height="@dimen/dp_36"
         android:layout_marginStart="@dimen/dp_24"
         android:layout_marginTop="@dimen/dp_32"
         android:orientation="horizontal"
@@ -37,7 +37,7 @@
         android:paddingBottom="@dimen/dp_60"
         android:clipToPadding="false"
 
-        android:paddingHorizontal="@dimen/dp_20"
+        android:paddingHorizontal="@dimen/dp_18"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="5"
         tools:listitem="@layout/item_sticker" />
