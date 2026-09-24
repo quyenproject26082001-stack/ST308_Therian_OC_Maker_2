@@ -34,7 +34,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:outerStrokeColor="#38306B"
-        app:outerStrokeWidth="@dimen/dp_1"
+        app:outerStrokeWidth="@dimen/dp_1_5"
         tools:text="Create your own avatar however you like" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

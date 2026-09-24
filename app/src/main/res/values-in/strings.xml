@@ -87,7 +87,7 @@
     <string name="add_to_whatsapp">Tambahkan Ke WhatsApp</string>
     <string name="add_to_telegram">Tambahkan Ke Telegram</string>
     <string name="my_avatar">Avatar Saya</string>
-    <string name="my_design">Desain Saya</string>
+    <string name="my_design">Desain</string>
     <string name="my_album">Album saya</string>
     <string name="no_app_found_to_handle_this_action">Tidak ditemukan aplikasi untuk menangani tindakan ini</string>
     <string name="invalid_action_msg">Aplikasi tidak terpasang</string>
@@ -123,7 +123,7 @@
     <string name="creation">\u00A0\u00A0Kreasi Saya\u00A0\u00A0</string>
     <string name="back">KEMBALI</string>
     <string name="hello_world_hint">Ketik kontenmu...</string>
-    <string name="character">Therian Saya</string>
+    <string name="character">Therian</string>
     <string name="edit">Edit</string>
     <string name="click_the_random_button_below_to_see_what_your_character_is">Klik tombol acak di bawah untuk melihat karaktermu!</string>
     <string name="next_intro">Berikutnya</string>

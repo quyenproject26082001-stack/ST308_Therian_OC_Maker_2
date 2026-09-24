@@ -185,6 +185,11 @@
           <theme>@style/Theme.BaseProject</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_create_name.xml">
+        <config>
+          <theme>@style/Theme.BaseProject</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_loading.xml">
         <config>
           <theme>@style/Theme.BaseProject</theme>
@@ -337,18 +342,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31619e55-3aba-4269-9734-fe301ba45adc" name="Changes" comment="make it for home">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_12dp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_list_color.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_progress_empty_h.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_progress_full_h.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/frame_facebook.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_delete.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_edit_view.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/slt_tab_category.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/uslt_tab_cate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/zero_star_ss.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" afterDir="false" />
@@ -356,133 +349,78 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/core/custom/drawview/CropView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/core/custom/drawview/CropView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/ic_launcher-playstore.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/ic_launcher-playstore.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/core/base/BaseActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/core/base/BaseActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/core/custom/drawview/DrawView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/core/custom/drawview/DrawView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/core/custom/text/OuterStrokeTextView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/core/custom/text/OuterStrokeTextView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/core/helper/RemoteAssetHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/core/helper/RemoteAssetHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/core/utils/key/DomainKey.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/core/utils/key/DomainKey.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/core/utils/key/IntentKey.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/core/utils/key/IntentKey.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/dialog/ChooseColorDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/dialog/ChooseColorDialog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/dialog/CosplayResultDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/dialog/CosplayResultDialog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/dialog/YesNoDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/dialog/YesNoDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/data/model/MyAlbumModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/data/model/MyAlbumModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/dialog/CreateNameDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/dialog/CreateNameDialog.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/add_character/AddCharacterActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/add_character/AddCharacterActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/add_character/AddCharacterViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/add_character/AddCharacterViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/add_character/adapter/BackgroundImageAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/add_character/adapter/BackgroundImageAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/add_character/adapter/TextColorAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/add_character/adapter/TextColorAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/choose_character/ChooseCharacterActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/choose_character/ChooseCharacterActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/cosplay/CosplayCustomizeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/cosplay/CosplayCustomizeActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/cosplay/CosplayRandomActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/cosplay/CosplayRandomActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/cosplay/CosplaySuccessfulActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/cosplay/CosplaySuccessfulActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/customize/BottomNavigationCustomizeAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/customize/BottomNavigationCustomizeAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/customize/CustomizeCharacterActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/customize/CustomizeCharacterActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/customize/LayerCustomizeAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/customize/LayerCustomizeAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/my_creation/MyCreationActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/my_creation/MyCreationActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/trending/TrendingActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/trending/TrendingActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_100_solid_green.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_100_solid_green.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_100_stroke_green_solid_white.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_100_stroke_green_solid_white.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_16_solid_white.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_16_solid_white.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_6_stroke_gray.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_6_stroke_gray.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_app_character_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_app_character_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_avatar_slt.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_avatar_slt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_btn_telegram.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_btn_telegram.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_btn_whatsapp.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_btn_whatsapp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_card_figma.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_card_figma.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_count_down2.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_count_down2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_design_slt.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_design_slt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_down.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_down.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_focus_color.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_focus_color.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_language_normal_v2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_language_normal_v2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_language_selected_v2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_language_selected_v2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_progress_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_progress_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_progress_container2.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_progress_container2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_rounded_8_gray.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_rounded_8_gray.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_setting_item_v2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_setting_item_v2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_up.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_up.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/five_star_ss.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/five_star_ss.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/four_star_ss.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/four_star_ss.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/frame_facebook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/guide_random.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/guide_random.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_delete_item.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_delete_item.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_done.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_done.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_edit.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_edit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_guide.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_guide.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/my_creation/adapter/MyAvatarAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/my_creation/adapter/MyAvatarAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/my_creation/adapter/MyDesignAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/my_creation/adapter/MyDesignAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/my_creation/fragment/MyAvatarFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/my_creation/fragment/MyAvatarFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/my_creation/fragment/MyDesignFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/my_creation/fragment/MyDesignFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/my_creation/view_model/MyAvatarViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/my_creation/view_model/MyAvatarViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/my_creation/view_model/MyDesignViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/my_creation/view_model/MyDesignViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/success/SuccessActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/success/SuccessActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/view/ViewActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/therian/oc/aaa/ui/view/ViewActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_move_uslt.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_move_uslt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_not_select.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_not_select.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_not_select_all.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_not_select_all.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_select_all.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_select_all.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_selected.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_selected.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_thumb.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_thumb.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/img_no_item.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/img_no_item.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/mask_item_navi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/mask_item_navi.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/one_star_ss.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/one_star_ss.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/three_star_ss.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/three_star_ss.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/two_star_ss.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/two_star_ss.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/un_selected_tab_sub.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/un_selected_tab_sub.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/img_home_bg_1_figma.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/img_home_bg_1_figma.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_character.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_character.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_album.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_album.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_choose_character.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_choose_character.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_cosplay_customize.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cosplay_customize.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_cosplay_random.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cosplay_random.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_cosplay_successful.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cosplay_successful.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_customize.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_customize.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_intro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_intro.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_language.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_language.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_permission.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_permission.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_random_character.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_random_character.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_success.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_success.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_trending.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_trending.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_view.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_color_picker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_color_picker.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_confirm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_confirm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_create_name.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_create_name.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_loading.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_loading.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_rate.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_rate.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_result.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_speech.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_speech.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_avatar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_avatar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_design.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_design.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_background_color.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_background_color.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_background_image.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_background_image.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_bottom_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_bottom_navigation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_choose_avatar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_choose_avatar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_color.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_color.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_customize.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_customize.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_font.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_font.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_intro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_intro.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_language.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_language.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_my_album.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_my_album.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_my_design.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_my_design.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_random_character.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_random_character.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_speech.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_speech.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_sticker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_sticker.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_text_color.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_text_color.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_actionbar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_actionbar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_add_character_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_add_character_background.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_add_character_speech.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_add_character_speech.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_add_character_sticker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_add_character_sticker.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_add_character_text.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_add_character_text.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_bottom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_bottom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_bottom_cosplay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_bottom_cosplay.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_bottom_creation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_bottom_creation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_bottom_ss.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_bottom_ss.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_bottom_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_bottom_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_custom_input.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_custom_input.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values-de/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-de/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values-es/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-es/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values-hi/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-hi/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values-in/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-in/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values-pt/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-pt/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-sw600dp/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-sw600dp/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -497,7 +435,7 @@
       <entry key="_C:/APPS/st243/ST225_CoupleMaker-KissCreator" value="3BqLBBF0BlxIOX6FeZEfr2n5Wy6" />
     </persistenceIdMap>
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[LocalEmulator::path=/home/lequyen/.android/avd/Pixel_10_Pro_XL_2.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[LocalEmulator::path=/home/lequyen/.android/avd/Pixel_Tablet.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -1020,12 +958,12 @@
         </entry>
         <entry key="com.therian.oc.aaa">
           <value>
-            <CheckInfo lastCheckTimestamp="1790044979592" />
+            <CheckInfo lastCheckTimestamp="1790132983898" />
           </value>
         </entry>
         <entry key="com.therian.oc.aaa.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1790044979594" />
+            <CheckInfo lastCheckTimestamp="1790132983900" />
           </value>
         </entry>
         <entry key="com.therian.oc.maker">

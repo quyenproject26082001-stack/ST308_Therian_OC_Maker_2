@@ -130,11 +130,11 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
                 btnActionBarRight.tap {
                     handleDelete()
                 }
-                btnActionBarNextRight.tap {
+                btnActionBarNextRight.tap (2000){
                     if (viewModel.statusFrom == AVATAR_TYPE) handleEditClick(viewModel.pathInternal.value)
                     else checkStoragePermission()
                 }
-                btnActionBarNextRight1.tap {
+                btnActionBarNextRight1.tap(2000) {
                     viewModel.shareFiles(this@ViewActivity)
                 }
             }
@@ -278,10 +278,10 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
                 myAvatarViewModel.checkDataInternet(this@ViewActivity) {
                     val intent =
                         Intent(this@ViewActivity, CustomizeCharacterActivity::class.java).apply {
-                            addFlags(
-                                Intent.FLAG_ACTIVITY_CLEAR_TOP or
-                                    Intent.FLAG_ACTIVITY_SINGLE_TOP
-                            )
+//                            addFlags(
+//                                Intent.FLAG_ACTIVITY_CLEAR_TOP or
+//                                    Intent.FLAG_ACTIVITY_SINGLE_TOP
+//                            )
                             putExtra(IntentKey.INTENT_KEY, myAvatarViewModel.positionCharacter)
                             putExtra(IntentKey.STATUS_FROM_KEY, ValueKey.EDIT)
                         }

@@ -33,6 +33,7 @@
         android:id="@+id/tvCountDown"
         android:layout_width="@dimen/dp_126"
         android:layout_height="@dimen/dp_40"
+        android:layout_marginBottom="@dimen/dp_10"
         android:background="@drawable/bg_count_down2"
         android:fontFamily="@font/digital_number_regular"
         android:gravity="center"
@@ -41,7 +42,7 @@
         android:text="10:00"
         android:textColor="@color/figma_primary"
         android:textSize="@dimen/sp_18"
-        app:layout_constraintBottom_toTopOf="@id/layoutCustomLayerBackground"
+        app:layout_constraintBottom_toBottomOf="@id/layoutActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -84,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
+        app:layout_constraintGuide_percent="@dimen/customize_horizontal_guide_percent" />
 
     <!-- btnFlip -->
     <ImageView
@@ -121,11 +122,10 @@
         android:layout_marginEnd="@dimen/dp_16"
         android:visibility="visible"
         app:cardCornerRadius="@dimen/dp_12"
-        app:layout_constraintBottom_toBottomOf="@id/tvCountDown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/tvCountDown"
-        app:strokeWidth="@dimen/dp_2"
-        app:strokeColor="#38306B">
+        app:strokeColor="#38306B"
+        app:strokeWidth="@dimen/dp_2">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/btnSamplePhoto"
@@ -168,13 +168,13 @@
         android:layout_width="@dimen/dp_24"
         android:layout_height="@dimen/dp_260"
         android:layout_marginStart="@dimen/dp_16"
-        android:layout_marginTop="@dimen/dp_25"
         android:layout_marginEnd="@dimen/dp_16"
         android:background="@drawable/bg_progress_container2"
         android:clipToOutline="true"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/layoutCustomLayerBackground">
+        android:layout_marginBottom="@dimen/dp_54"
+        app:layout_constraintBottom_toTopOf="@id/bg_cus"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:id="@+id/progressBar"
@@ -205,12 +205,12 @@
         android:layout_marginTop="@dimen/dp_6"
         android:fontFamily="@font/baloo_2_bold"
         android:textColor="@color/figma_primary"
-        tools:text="100%"
         android:textSize="@dimen/sp_16"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@id/progressContainer"
         app:layout_constraintStart_toStartOf="@id/progressContainer"
-        app:layout_constraintTop_toBottomOf="@id/progressContainer" />
+        app:layout_constraintTop_toBottomOf="@id/progressContainer"
+        tools:text="100%" />
 
 
     <!-- gl_btn -->
@@ -267,13 +267,12 @@
                 android:id="@+id/relativeLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp_40"
-                android:orientation="vertical"
                 android:background="@drawable/bg_list_color"
+                android:orientation="vertical"
                 app:cardCornerRadius="@dimen/dp_30"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                >
+                app:layout_constraintTop_toTopOf="parent">
 
 
                 <RelativeLayout
@@ -399,19 +398,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:strokeWidth="@dimen/dp_2"
-            app:strokeColor="@color/figma_primary">
+            app:strokeColor="@color/figma_primary"
+            app:strokeWidth="@dimen/dp_2">
 
 
-
-                    <ImageView
-                        android:id="@+id/btnSamplePhotoShow"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="@dimen/dp_0"
-                        android:scaleType="fitCenter"
-                        tools:src="@color/white" />
-                </com.google.android.material.card.MaterialCardView>
+            <ImageView
+                android:id="@+id/btnSamplePhotoShow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/dp_0"
+                android:scaleType="fitCenter"
+                tools:src="@color/white" />
+        </com.google.android.material.card.MaterialCardView>
 
 
         <TextView

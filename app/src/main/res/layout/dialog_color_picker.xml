@@ -57,7 +57,7 @@
 
                 <ImageView
                     android:layout_width="@dimen/dp_24"
-                    android:layout_height="@dimen/dp_24"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     app:tint="#FFFFFF"
                     android:visibility="invisible"

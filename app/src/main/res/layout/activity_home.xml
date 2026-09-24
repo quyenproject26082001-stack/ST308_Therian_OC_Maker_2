@@ -86,27 +86,44 @@
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/bg_home_text_left" />
 
-                    <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
-                        android:id="@+id/tv1"
-                        android:layout_width="@dimen/dp_206"
-                        android:layout_height="@dimen/dp_46"
-                        android:layout_gravity="start|center_vertical"
-                        android:fontFamily="@font/baloo_2_bold"
-                        android:gravity="center"
-                        android:includeFontPadding="false"
-                        android:text="@string/play"
-                        android:textColor="@color/figma_primary"
-                        android:textSize="@dimen/sp_28"
-                        app:outerStrokeColor="@color/white"
-                        app:outerStrokeWidth="@dimen/dp_2" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <ImageView
-                        android:layout_width="@dimen/dp_112"
-                        android:layout_height="@dimen/dp_112"
-                        android:layout_gravity="end"
-                        android:contentDescription="@null"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/img_home_char_1_figma" />
+                        <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
+                            android:id="@+id/tv1"
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="@dimen/dp_46"
+                            android:layout_marginStart="@dimen/dp_16"
+                            android:fontFamily="@font/baloo_2_bold"
+                            android:gravity="start"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:text="@string/play"
+                            android:textColor="@color/figma_primary"
+                            android:textSize="@dimen/sp_28"
+                            app:autoSizeMaxTextSize="@dimen/sp_28"
+                            app:autoSizeMinTextSize="@dimen/sp_18"
+                            app:autoSizeStepGranularity="1sp"
+                            app:autoSizeTextType="uniform"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/imvHomeChar1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:outerStrokeColor="@color/white"
+                            app:outerStrokeWidth="@dimen/dp_2" />
+
+                        <ImageView
+                            android:id="@+id/imvHomeChar1"
+                            android:layout_width="@dimen/dp_112"
+                            android:layout_height="@dimen/dp_112"
+                            android:contentDescription="@null"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/img_home_char_1_figma"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </FrameLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -141,27 +158,44 @@
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/bg_home_text_right" />
 
-                    <ImageView
-                        android:layout_width="@dimen/dp_112"
-                        android:layout_height="@dimen/dp_112"
-                        android:layout_gravity="start"
-                        android:contentDescription="@null"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/img_home_char_2_figma" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
-                        android:id="@+id/tv2"
-                        android:layout_width="@dimen/dp_216"
-                        android:layout_height="@dimen/dp_46"
-                        android:layout_gravity="end|center_vertical"
-                        android:fontFamily="@font/baloo_2_bold"
-                        android:gravity="center"
-                        android:includeFontPadding="false"
-                        android:text="@string/cosplay_therian"
-                        android:textColor="@color/figma_primary"
-                        android:textSize="@dimen/sp_28"
-                        app:outerStrokeColor="@color/white"
-                        app:outerStrokeWidth="@dimen/dp_2" />
+                        <ImageView
+                            android:id="@+id/imvHomeChar2"
+                            android:layout_width="@dimen/dp_112"
+                            android:layout_height="@dimen/dp_112"
+                            android:contentDescription="@null"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/img_home_char_2_figma"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
+                            android:id="@+id/tv2"
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="@dimen/dp_46"
+                            android:layout_marginEnd="@dimen/dp_16"
+                            android:fontFamily="@font/baloo_2_bold"
+                            android:gravity="end"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:text="@string/cosplay_therian"
+                            android:textColor="@color/figma_primary"
+                            android:textSize="@dimen/sp_28"
+                            app:autoSizeMaxTextSize="@dimen/sp_28"
+                            app:autoSizeMinTextSize="@dimen/sp_18"
+                            app:autoSizeStepGranularity="1sp"
+                            app:autoSizeTextType="uniform"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/imvHomeChar2"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:outerStrokeColor="@color/white"
+                            app:outerStrokeWidth="@dimen/dp_2" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </FrameLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -196,27 +230,44 @@
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/bg_home_text_left" />
 
-                    <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
-                        android:id="@+id/tv3"
-                        android:layout_width="@dimen/dp_216"
-                        android:layout_height="@dimen/dp_46"
-                        android:layout_gravity="start|center_vertical"
-                        android:fontFamily="@font/baloo_2_bold"
-                        android:gravity="center"
-                        android:includeFontPadding="false"
-                        android:text="@string/therian_random"
-                        android:textColor="@color/figma_primary"
-                        android:textSize="@dimen/sp_28"
-                        app:outerStrokeColor="@color/white"
-                        app:outerStrokeWidth="@dimen/dp_2" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <ImageView
-                        android:layout_width="@dimen/dp_102"
-                        android:layout_height="@dimen/dp_112"
-                        android:layout_gravity="end"
-                        android:contentDescription="@null"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/img_home_char_3_figma" />
+                        <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
+                            android:id="@+id/tv3"
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="@dimen/dp_46"
+                            android:layout_marginStart="@dimen/dp_16"
+                            android:fontFamily="@font/baloo_2_bold"
+                            android:gravity="start"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:text="@string/therian_random"
+                            android:textColor="@color/figma_primary"
+                            android:textSize="@dimen/sp_28"
+                            app:autoSizeMaxTextSize="@dimen/sp_28"
+                            app:autoSizeMinTextSize="@dimen/sp_18"
+                            app:autoSizeStepGranularity="1sp"
+                            app:autoSizeTextType="uniform"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/imvHomeChar3"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:outerStrokeColor="@color/white"
+                            app:outerStrokeWidth="@dimen/dp_2" />
+
+                        <ImageView
+                            android:id="@+id/imvHomeChar3"
+                            android:layout_width="@dimen/dp_102"
+                            android:layout_height="@dimen/dp_112"
+                            android:contentDescription="@null"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/img_home_char_3_figma"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </FrameLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -251,27 +302,44 @@
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/bg_home_text_right" />
 
-                    <ImageView
-                        android:layout_width="@dimen/dp_112"
-                        android:layout_height="@dimen/dp_112"
-                        android:layout_gravity="start"
-                        android:contentDescription="@null"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/img_home_char_4_figma" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
-                        android:id="@+id/tv4"
-                        android:layout_width="@dimen/dp_216"
-                        android:layout_height="@dimen/dp_46"
-                        android:layout_gravity="end|center_vertical"
-                        android:fontFamily="@font/baloo_2_bold"
-                        android:gravity="center"
-                        android:includeFontPadding="false"
-                        android:text="@string/creation"
-                        android:textColor="@color/figma_primary"
-                        android:textSize="@dimen/sp_28"
-                        app:outerStrokeColor="@color/white"
-                        app:outerStrokeWidth="@dimen/dp_2" />
+                        <ImageView
+                            android:id="@+id/imvHomeChar4"
+                            android:layout_width="@dimen/dp_112"
+                            android:layout_height="@dimen/dp_112"
+                            android:contentDescription="@null"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/img_home_char_4_figma"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.therian.oc.aaa.core.custom.text.DoubleStrokeTextView
+                            android:id="@+id/tv4"
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="@dimen/dp_46"
+                            android:layout_marginEnd="@dimen/dp_16"
+                            android:fontFamily="@font/baloo_2_bold"
+                            android:gravity="end"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:text="@string/creation"
+                            android:textColor="@color/figma_primary"
+                            android:textSize="@dimen/sp_28"
+                            app:autoSizeMaxTextSize="@dimen/sp_28"
+                            app:autoSizeMinTextSize="@dimen/sp_18"
+                            app:autoSizeStepGranularity="1sp"
+                            app:autoSizeTextType="uniform"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/imvHomeChar4"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:outerStrokeColor="@color/white"
+                            app:outerStrokeWidth="@dimen/dp_2" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </FrameLayout>
             </com.google.android.material.card.MaterialCardView>
 

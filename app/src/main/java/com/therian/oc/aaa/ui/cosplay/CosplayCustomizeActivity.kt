@@ -15,13 +15,13 @@ import com.bumptech.glide.Glide
 import com.therian.oc.aaa.R
 import com.therian.oc.aaa.core.base.BaseActivity
 import com.therian.oc.aaa.core.extensions.gone
-import com.therian.oc.aaa.core.extensions.handleBackLeftToRight
 import com.therian.oc.aaa.core.extensions.hideNavigation
 import com.therian.oc.aaa.core.extensions.invisible
 import com.therian.oc.aaa.core.extensions.showInterAll
 import com.therian.oc.aaa.core.extensions.tap
 import com.therian.oc.aaa.core.extensions.visible
 import com.therian.oc.aaa.core.helper.BitmapHelper
+import com.therian.oc.aaa.core.helper.LanguageHelper
 import com.therian.oc.aaa.core.helper.MediaHelper
 import com.therian.oc.aaa.core.utils.key.IntentKey
 import com.therian.oc.aaa.core.utils.key.ValueKey
@@ -29,6 +29,7 @@ import com.therian.oc.aaa.core.utils.state.SaveState
 import com.therian.oc.aaa.data.model.custom.SuggestionModel
 import com.therian.oc.aaa.databinding.ActivityCosplayCustomizeBinding
 import com.therian.oc.aaa.dialog.CosplayResultDialog
+import com.therian.oc.aaa.dialog.YesNoDialog
 import com.therian.oc.aaa.ui.customize.BottomNavigationCustomizeAdapter
 import com.therian.oc.aaa.ui.customize.ColorLayerCustomizeAdapter
 import com.therian.oc.aaa.ui.customize.CustomizeCharacterViewModel
@@ -636,8 +637,17 @@ class CosplayCustomizeActivity : BaseActivity<ActivityCosplayCustomizeBinding>()
     }
 
     private fun confirmExit() {
-
-        handleBackLeftToRight()
+        val dialog = YesNoDialog(this, R.string.exit, R.string.do_you_want_to_exit)
+        LanguageHelper.setLocale(this)
+        dialog.show()
+        dialog.onYesClick = {
+            dialog.dismiss()
+            showInterAll { finish() }
+        }
+        dialog.onNoClick = {
+            dialog.dismiss()
+            hideNavigation()
+        }
     }
 
     // ── Lifecycle ─────────────────────────────────────────────────────────────

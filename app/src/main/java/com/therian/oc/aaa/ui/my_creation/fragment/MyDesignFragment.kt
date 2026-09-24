@@ -16,9 +16,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.RecyclerView
 import com.therian.oc.aaa.R
 import com.therian.oc.aaa.core.base.BaseFragment
-import com.therian.oc.aaa.core.extensions.gone
 import com.therian.oc.aaa.core.extensions.hideNavigation
-import com.therian.oc.aaa.core.extensions.invisible
 import com.therian.oc.aaa.core.extensions.select
 import com.therian.oc.aaa.core.extensions.showInterAll
 import com.therian.oc.aaa.core.extensions.tap
@@ -70,8 +68,7 @@ class MyDesignFragment : BaseFragment<FragmentMyDesignBinding>() {
                         myDesignAdapter.submitList(list)
                         binding.layoutNoItem.isVisible = list.isEmpty()
                         if (myCreationViewModel.typeStatus.value == ValueKey.MY_DESIGN_TYPE) {
-                            if (list.isEmpty()) myAlbumActivity.binding.lnlBottom.gone()
-                            else myAlbumActivity.binding.lnlBottom.invisible()
+                            myAlbumActivity.refreshBottomVisibility()
                         }
                     }
                 }
@@ -182,6 +179,7 @@ class MyDesignFragment : BaseFragment<FragmentMyDesignBinding>() {
     private fun handleLongClick(position: Int) {
         if (position >= viewModel.myDesignList.value.size) return
         viewModel.showLongClick(position)
+        binding.rcvMyDesign.clipToPadding = true
         myAlbumActivity.enterSelectionMode()
 
         // Check if all items are now selected (e.g., if there's only 1 item)
@@ -202,6 +200,7 @@ class MyDesignFragment : BaseFragment<FragmentMyDesignBinding>() {
 
     fun getAllPaths(): ArrayList<String> {
         return viewModel.myDesignList.value
+            .filterNot { it.isFake }
             .map { it.path }
             .toCollection(ArrayList())
     }
@@ -228,6 +227,7 @@ class MyDesignFragment : BaseFragment<FragmentMyDesignBinding>() {
 
     fun resetSelectionMode() {
         viewModel.clearSelection()
+        binding.rcvMyDesign.clipToPadding = false
         myAlbumActivity.exitSelectionMode()
         // notifyItemRangeChanged not needed - data will refresh automatically
     }
@@ -235,9 +235,7 @@ class MyDesignFragment : BaseFragment<FragmentMyDesignBinding>() {
     override fun onHiddenChanged(hidden: Boolean) {
         super.onHiddenChanged(hidden)
         if (!hidden) {
-            val isEmpty = viewModel.myDesignList.value.isEmpty()
-            if (isEmpty) myAlbumActivity.binding.lnlBottom.gone()
-            else myAlbumActivity.binding.lnlBottom.invisible()
+            myAlbumActivity.refreshBottomVisibility()
         }
     }
 

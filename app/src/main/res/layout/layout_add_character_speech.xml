@@ -35,6 +35,7 @@
         android:layout_marginTop="@dimen/dp_74"
         android:paddingHorizontal="@dimen/dp_18"
         android:paddingBottom="@dimen/dp_60"
+        android:layout_marginBottom="@dimen/dp_22"
         android:clipToPadding="false"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="5"

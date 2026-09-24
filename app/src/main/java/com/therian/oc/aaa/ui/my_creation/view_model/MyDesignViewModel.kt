@@ -7,6 +7,7 @@ import com.therian.oc.aaa.core.helper.MediaHelper
 import com.therian.oc.aaa.core.utils.key.ValueKey
 import com.therian.oc.aaa.data.local.PersistenceRepository
 import com.therian.oc.aaa.data.model.MyAlbumModel
+import com.therian.oc.aaa.ui.my_creation.MyCreationPreviewConfig
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -22,6 +23,12 @@ class MyDesignViewModel : ViewModel() {
     private var loadJob: Job? = null
 
     fun loadMyDesign(context: Context) {
+        if (MyCreationPreviewConfig.SHOW_FAKE_ITEMS) {
+            loadJob?.cancel()
+            _myDesignList.value = MyCreationPreviewConfig.createFakeItems("design")
+            checkLastItem()
+            return
+        }
         val appContext = context.applicationContext
         loadJob?.cancel()
         loadJob = viewModelScope.launch {
@@ -78,7 +85,7 @@ class MyDesignViewModel : ViewModel() {
     }
 
     fun getPathSelected() : ArrayList<String>{
-        return _myDesignList.value.filter { it.isSelected }.map { it.path }.toCollection(ArrayList())
+        return _myDesignList.value.filter { it.isSelected && !it.isFake }.map { it.path }.toCollection(ArrayList())
     }
 
     fun clearSelection() {

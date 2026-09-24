@@ -85,6 +85,7 @@
     <dimen name="dp_108">162dp</dimen>
     <dimen name="dp_112">168dp</dimen>
     <dimen name="dp_116">174dp</dimen>
+    <dimen name="dp_120">180dp</dimen>
     <dimen name="dp_126">189dp</dimen>
     <dimen name="dp_144">216dp</dimen>
     <dimen name="dp_148">222dp</dimen>
@@ -117,4 +118,5 @@
     <dimen name="_220dp">330dp</dimen>
     <dimen name="dp_90">135dp</dimen>
     <dimen name="tablet">40dp</dimen>
+    <item name="customize_horizontal_guide_percent" type="dimen">0.55</item>
 </resources>

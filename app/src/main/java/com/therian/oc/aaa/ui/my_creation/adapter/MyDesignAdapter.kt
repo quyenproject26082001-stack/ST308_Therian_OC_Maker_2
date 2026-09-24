@@ -35,12 +35,13 @@ class MyDesignAdapter : BaseAdapter<MyAlbumModel, ItemMyDesignBinding>(ItemMyDes
 
             // Optimized Glide loading with thumbnail, size override, and caching
             val file = File(item.path)
+            val imageSource: Any = item.previewResId ?: file
             Glide.with(root.context)
-                .load(file)
+                .load(imageSource)
                 .thumbnail(0.1f)
                 .override(256, 256)
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-                .signature(ObjectKey(file.lastModified()))
+                .signature(ObjectKey(item.previewResId ?: file.lastModified()))
                 .into(imvImage)
 
             if (item.isShowSelection) {
@@ -59,7 +60,9 @@ class MyDesignAdapter : BaseAdapter<MyAlbumModel, ItemMyDesignBinding>(ItemMyDes
                 frameCover.gone()
             }
 
-            root.tap { onItemClick.invoke(item.path) }
+            root.tap {
+                if (!item.isFake) onItemClick.invoke(item.path)
+            }
 
             root.setOnLongClickListener {
                 if (items.any { album -> album.isShowSelection }) return@setOnLongClickListener false
@@ -69,7 +72,9 @@ class MyDesignAdapter : BaseAdapter<MyAlbumModel, ItemMyDesignBinding>(ItemMyDes
                 onLongClick.invoke(actualPos)
                 true
             }
-            btnDelete.tap { onDeleteClick.invoke(item.path) }
+            btnDelete.tap {
+                if (!item.isFake) onDeleteClick.invoke(item.path)
+            }
             btnSelect.tap {
                 val (rv, rvChild) = findRecyclerView(root) ?: return@tap
                 val actualPos = rv.getChildAdapterPosition(rvChild)

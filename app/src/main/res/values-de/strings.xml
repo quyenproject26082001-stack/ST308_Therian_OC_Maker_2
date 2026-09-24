@@ -87,7 +87,7 @@
     <string name="add_to_whatsapp">Zu WhatsApp hinzufügen</string>
     <string name="add_to_telegram">Zu Telegram hinzufügen</string>
     <string name="my_avatar">Mein Avatar</string>
-    <string name="my_design">Mein Design</string>
+    <string name="my_design">Design</string>
     <string name="my_album">Mein Album</string>
     <string name="no_app_found_to_handle_this_action">Keine App gefunden, um diese Aktion auszuführen</string>
     <string name="invalid_action_msg">Anwendung nicht installiert</string>
@@ -123,7 +123,7 @@
     <string name="creation">\u00A0\u00A0Meine Kreation\u00A0\u00A0</string>
     <string name="back">ZURÜCK</string>
     <string name="hello_world_hint">Gib deinen Text ein...</string>
-    <string name="character">Mein Therian</string>
+    <string name="character">Therian</string>
     <string name="edit">Bearbeiten</string>
     <string name="click_the_random_button_below_to_see_what_your_character_is">Klicke unten auf die Zufallsschaltfläche, um zu sehen, wie deine Figur aussieht!</string>
     <string name="next_intro">Weiter</string>

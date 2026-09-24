@@ -16,7 +16,9 @@
         android:layout_height="match_parent"
         android:paddingHorizontal="@dimen/dp_16"
         android:clipChildren="false"
-        android:layout_marginTop="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_12"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/dp_72"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         tools:listitem="@layout/item_my_design" />

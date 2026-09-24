@@ -16,6 +16,7 @@ import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.PopupWindow
 import androidx.activity.viewModels
+import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -102,7 +103,8 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             tvCenter.visible()
             tvCenter.setText(R.string.my_creation)
         }
-        binding.lnlBottom.visible()
+        binding.flBottomView.gone()
+        binding.lnlBottom.gone()
         binding.lnlBottom.isSelected = true
 
     }
@@ -130,6 +132,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
                                     }
                                 }
                                 updateBottomButtonsVisibility()
+                                refreshBottomVisibility()
                             }
                         }
                     }
@@ -209,11 +212,11 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             }
 
             // Share/Download buttons in flBottomView (select mode)
-            bottomView.btnWhatsapp.tap(800) {
+            bottomView.btnWhatsapp.tap(2000) {
                 val paths = getSelectedPathsFromCurrentFragment()
                 handleShare(paths)
             }
-            bottomView.btnTelegram.tap(800) {
+            bottomView.btnTelegram.tap(2000) {
                 val paths = getSelectedPathsFromCurrentFragment()
                 if (paths.isEmpty()) {
                     showToast(R.string.please_select_an_image); return@tap
@@ -324,13 +327,24 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
 
             btnActionBarLeft.visible()
 
+            val titleMargin = resources.getDimensionPixelSize(R.dimen.dp_120)
+            tvCenter.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                width = 0
+                marginStart = titleMargin
+                marginEnd = titleMargin
+            }
+
             btnActionBarNextRight.gone()
 
             // Delete All button - hidden initially, only shown in selection mode
             btnActionBarRight.setImageResource(R.drawable.ic_delete_creation)
+            btnActionBarRight.layoutParams = btnActionBarRight.layoutParams.apply {
+                width = resources.getDimensionPixelSize(R.dimen.dp_46)
+                height = resources.getDimensionPixelSize(R.dimen.dp_46)
+            }
             btnActionBarRight.translationX = -resources.getDimension(R.dimen.dp_6)
-            btnActionBarNextRight.translationX = -resources.getDimension(R.dimen.dp_6)
-            btnActionBarRight.translationY = resources.getDimension(R.dimen.dp_0)
+            btnActionBarNextRight.translationX = resources.getDimension(R.dimen.dp_6)
+            btnActionBarRight.translationY = resources.getDimension(R.dimen.dp_4)
             btnActionBarRight.invisible()
         }
     }
@@ -405,10 +419,6 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         dialog.onNoClick = {
             dismissDialog()
         }
-        dialog.onDismissClick = {
-            dismissDialog()
-        }
-
         dialog.onYesClick = { packageName ->
             dismissDialog()
             viewModel.addToWhatsapp(this, packageName, list) { stickerPack ->
@@ -553,16 +563,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             btnActionBarRight.setImageResource(R.drawable.ic_not_select_all)
             btnActionBarNextRight1.gone()
         }
-        // Show share/download bottom view for both tabs
-        binding.flBottomView.visible()
-        // Avatar tab: keep lnlBottom (whatsapp/telegram), move closer to flBottomView
-        // Design tab: hide lnlBottom (no whatsapp/telegram)
-        if (viewModel.typeStatus.value == ValueKey.AVATAR_TYPE) {
-            binding.lnlBottom.visible()
-            binding.lnlBottom.translationY = resources.getDimension(R.dimen.dp_15)
-        } else {
-            binding.lnlBottom.gone()
-        }
+        refreshBottomVisibility()
     }
 
     fun exitSelectionMode() {
@@ -572,19 +573,43 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             btnActionBarNextRight.gone()
             btnActionBarRight.gone()
         }
-        binding.flBottomView.gone()
+        refreshBottomVisibility()
+    }
+
+    fun refreshBottomVisibility() {
         val currentlyEmpty = when (viewModel.typeStatus.value) {
-            ValueKey.AVATAR_TYPE -> myAvatarFragment?.getAllPaths()?.isEmpty() ?: true
-            ValueKey.MY_DESIGN_TYPE -> myDesignFragment?.getAllPaths()?.isEmpty() ?: true
+            ValueKey.AVATAR_TYPE -> myAvatarFragment
+                ?.takeIf { it.isAdded }
+                ?.getAllPaths()
+                ?.isEmpty() ?: true
+            ValueKey.MY_DESIGN_TYPE -> myDesignFragment
+                ?.takeIf { it.isAdded }
+                ?.getAllPaths()
+                ?.isEmpty() ?: true
             else -> true
         }
-        if (!currentlyEmpty) {
-            if (viewModel.typeStatus.value == ValueKey.AVATAR_TYPE) {
+
+        if (isInSelectionMode && !currentlyEmpty) {
+            binding.flBottomView.visible()
+        } else {
+            binding.flBottomView.gone()
+        }
+
+        when {
+            currentlyEmpty -> binding.lnlBottom.gone()
+            viewModel.typeStatus.value == ValueKey.AVATAR_TYPE -> {
                 binding.lnlBottom.visible()
-            } else {
-                binding.lnlBottom.invisible()
+                binding.lnlBottom.translationY = if (isInSelectionMode) {
+                    resources.getDimension(R.dimen.dp_15)
+                } else {
+                    0f
+                }
             }
-            binding.lnlBottom.translationY = 0f
+            isInSelectionMode -> binding.lnlBottom.gone()
+            else -> {
+                binding.lnlBottom.invisible()
+                binding.lnlBottom.translationY = 0f
+            }
         }
     }
 

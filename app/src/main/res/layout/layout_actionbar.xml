@@ -112,7 +112,7 @@
         style="@style/single_marquee"
         android:layout_width="@dimen/dp_200"
         android:layout_height="@dimen/dp_40"
-        android:layout_marginHorizontal="@dimen/dp_100"
+        android:layout_marginHorizontal="@dimen/dp_102"
         android:fontFamily="@font/baloo_2_bold"
         android:gravity="center"
         android:includeFontPadding="false"

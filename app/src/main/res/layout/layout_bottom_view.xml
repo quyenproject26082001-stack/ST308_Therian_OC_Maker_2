@@ -189,7 +189,7 @@ style="@style/single_marquee"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/GLCenter"
-        android:background="@drawable/frame_inst_gradient"
+        android:background="@drawable/frame_inst"
         >
         <ImageView
             android:id="@+id/icIst"

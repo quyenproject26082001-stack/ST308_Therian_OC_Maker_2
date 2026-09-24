@@ -80,7 +80,7 @@
             android:scaleType="fitXY"
             />
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
@@ -90,6 +90,10 @@
                 android:id="@+id/btnMyPixel"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/space"
                 android:layout_weight="1">
 
                 <com.therian.oc.aaa.core.custom.text.OuterStrokeTextView
@@ -100,16 +104,27 @@
                     android:fontFamily="@font/baloo_2_bold"
                     android:gravity="center"
                     android:text="@string/character"
-                    android:layout_marginEnd="@dimen/dp_19"
                     android:textColor="@color/app"
                     android:textSize="@dimen/sp_18" />
 
             </FrameLayout>
 
+            <FrameLayout
+                android:id="@+id/space"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnMyDesign"
+                app:layout_constraintStart_toEndOf="@id/btnMyPixel"
+                app:layout_constraintWidth_percent="0.04615384615"
+                />
             <!--            btnMyDesign-->
             <FrameLayout
                 android:id="@+id/btnMyDesign"
                 android:layout_width="@dimen/dp_0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/space"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
@@ -120,14 +135,13 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/baloo_2_bold"
                     android:gravity="center"
-                    android:layout_marginStart="@dimen/dp_19"
                     android:text="@string/my_design"
                     android:textColor="@color/white"
                     android:textSize="@dimen/sp_18" />
 
             </FrameLayout>
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>
 
@@ -138,7 +152,7 @@
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/dp_0"
         android:elevation="@dimen/dp_2"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <include
@@ -155,7 +169,7 @@
         android:layout_marginBottom="@dimen/dp_0"
         android:paddingHorizontal="@dimen/dp_0"
         android:elevation="@dimen/dp_1"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/flBottomView"
         app:layout_goneMarginBottom="@dimen/dp_0">
 

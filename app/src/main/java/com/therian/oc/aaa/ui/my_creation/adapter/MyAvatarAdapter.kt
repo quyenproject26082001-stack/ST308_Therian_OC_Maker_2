@@ -49,12 +49,13 @@ class MyAvatarAdapter(val context: Context) :
 
             // Optimized Glide loading with thumbnail, size override, and caching
             val file = File(item.path)
+            val imageSource: Any = item.previewResId ?: file
             Glide.with(context)
-                .load(file)
+                .load(imageSource)
                 .thumbnail(0.1f) // Load 10% quality thumbnail first
                 .override(256, 256)
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-                .signature(ObjectKey(file.lastModified())) // Cache invalidation
+                .signature(ObjectKey(item.previewResId ?: file.lastModified())) // Cache invalidation
                 .into(imvImage)
 
             if (item.isShowSelection) {
@@ -75,7 +76,9 @@ class MyAvatarAdapter(val context: Context) :
                 frameCover.gone()
             }
 
-            root.tap { onItemClick.invoke(item.path) }
+            root.tap {
+                if (!item.isFake) onItemClick.invoke(item.path)
+            }
 
             root.setOnLongClickListener {
                 if (items.any { album -> album.isShowSelection }) return@setOnLongClickListener false
@@ -86,13 +89,13 @@ class MyAvatarAdapter(val context: Context) :
                 true
             }
             btnEdit.tap {
-                if (item.path != null) {
+                if (!item.isFake) {
                     onEditClick.invoke(item.path)
-                } else {
-                    Toast.makeText(context, R.string.no_item_here, Toast.LENGTH_SHORT).show()
                 }
             }
-            btnDelete.tap { onDeleteClick.invoke(item.path) }
+            btnDelete.tap {
+                if (!item.isFake) onDeleteClick.invoke(item.path)
+            }
             btnSelect.tap {
                 val (rv, rvChild) = findRecyclerView(root) ?: return@tap
                 val actualPos = rv.getChildAdapterPosition(rvChild)

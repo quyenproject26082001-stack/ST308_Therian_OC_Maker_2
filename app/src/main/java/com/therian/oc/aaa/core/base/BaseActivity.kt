@@ -120,7 +120,7 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
         withContext(Dispatchers.Main) {
             if (loadingDialog.isShowing) {
                 loadingDialog.dismiss()
-                hideNavigation(isBlack)
+                hideNavigation()
             }
         }
     }

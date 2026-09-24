@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/dp_2"
-            app:cardBackgroundColor="#39465A"
+            app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="@dimen/dp_12"
             app:strokeWidth="@dimen/dp_2"
             app:strokeColor="@color/figma_primary">
@@ -49,7 +49,7 @@
                 android:layout_width="@dimen/dp_32"
                 android:layout_height="@dimen/dp_32"
                 android:layout_gravity="end|top"
-                android:layout_margin="@dimen/dp_2"
+                android:layout_margin="@dimen/dp_4"
                 android:src="@drawable/ic_delete_item" />
 
             <!--btnSelect-->
@@ -58,7 +58,7 @@
                 android:layout_width="@dimen/dp_32"
                 android:layout_height="@dimen/dp_32"
                 android:layout_gravity="end|top"
-                android:layout_margin="@dimen/dp_2"
+                android:layout_margin="@dimen/dp_4"
                 android:src="@drawable/ic_not_select" />
 
         </com.google.android.material.card.MaterialCardView>

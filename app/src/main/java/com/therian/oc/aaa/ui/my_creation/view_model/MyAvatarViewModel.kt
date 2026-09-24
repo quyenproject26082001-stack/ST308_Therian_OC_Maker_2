@@ -12,6 +12,7 @@ import com.therian.oc.aaa.data.local.PersistenceRepository
 import com.therian.oc.aaa.data.model.MyAlbumModel
 import com.therian.oc.aaa.data.model.custom.CustomizeModel
 import com.therian.oc.aaa.data.model.custom.SuggestionModel
+import com.therian.oc.aaa.ui.my_creation.MyCreationPreviewConfig
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -32,6 +33,12 @@ class MyAvatarViewModel : ViewModel() {
     private var loadJob: Job? = null
 
     fun loadMyAvatar(context: Context) {
+        if (MyCreationPreviewConfig.SHOW_FAKE_ITEMS) {
+            loadJob?.cancel()
+            _myAvatarList.value = MyCreationPreviewConfig.createFakeItems("avatar")
+            checkLastItem()
+            return
+        }
         val appContext = context.applicationContext
         loadJob?.cancel()
         loadJob = viewModelScope.launch {
@@ -134,7 +141,7 @@ class MyAvatarViewModel : ViewModel() {
 
     fun getPathSelected() : ArrayList<String>{
         return _myAvatarList.value
-            .filter { it.isSelected }
+            .filter { it.isSelected && !it.isFake }
             .map { it.path }
             .toCollection(ArrayList())
     }

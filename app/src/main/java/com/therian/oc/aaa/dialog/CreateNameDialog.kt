@@ -20,7 +20,6 @@ class CreateNameDialog(val context: Activity) :
 
     var onNoClick: (() -> Unit) = {}
     var onYesClick: ((String) -> Unit) = {}
-    var onDismissClick: (() -> Unit) = {}
 
     override fun initView() {
         context.hideNavigation()
@@ -44,9 +43,6 @@ class CreateNameDialog(val context: Activity) :
                         onYesClick.invoke(input)
                     }
                 }
-            }
-            flOutSide.tap {
-                onDismissClick.invoke()
             }
         }
     }

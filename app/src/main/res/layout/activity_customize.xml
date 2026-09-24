@@ -72,7 +72,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
+        app:layout_constraintGuide_percent="@dimen/customize_horizontal_guide_percent"
+        />
 
     <!--    btnFlip-->
     <ImageView

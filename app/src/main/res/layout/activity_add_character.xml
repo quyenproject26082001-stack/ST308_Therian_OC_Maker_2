@@ -64,7 +64,7 @@
         android:layout_marginHorizontal="@dimen/dp_20"
         android:layout_marginTop="@dimen/dp_10"
         app:cardElevation="@dimen/dp_0"
-
+        app:layout_constraintBottom_toBottomOf="@id/gl"
         app:cardBackgroundColor="@color/transparent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,10 +100,10 @@
         android:id="@+id/flFunction"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_0"
-        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_20"
         android:clipChildren="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardSave">
+        app:layout_constraintTop_toBottomOf="@id/gl">
 
         <ImageView
             android:id="@+id/bg_bg"
@@ -169,8 +169,8 @@
         <!--        btnBackground-->
         <ImageView
             android:id="@+id/btnBackground"
-            android:layout_width="@dimen/dp_44"
-            android:layout_height="@dimen/dp_44"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
             android:layout_marginHorizontal="@dimen/dp_12"
             app:layout_constraintHorizontal_chainStyle="packed"
             android:src="@drawable/ic_bg_slt"
@@ -182,8 +182,8 @@
         <!--        btnSticker-->
         <ImageView
             android:id="@+id/btnSticker"
-            android:layout_width="@dimen/dp_44"
-            android:layout_height="@dimen/dp_44"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
             android:layout_marginHorizontal="@dimen/dp_12"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_sticker"
@@ -195,8 +195,8 @@
         <!--        btnSpeech-->
         <ImageView
             android:id="@+id/btnSpeech"
-            android:layout_width="@dimen/dp_44"
-            android:layout_height="@dimen/dp_44"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
             android:layout_marginHorizontal="@dimen/dp_12"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_speech"
@@ -208,9 +208,8 @@
         <!--        btnText-->
         <ImageView
             android:id="@+id/btnText"
-            android:layout_width="@dimen/dp_44"
-            android:layout_height="@dimen/dp_44"
-            android:layout_marginEnd="@dimen/dp_23"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
             android:layout_marginHorizontal="@dimen/dp_12"
             app:layout_constraintStart_toEndOf="@id/btnSpeech"
             android:background="?attr/selectableItemBackgroundBorderless"
@@ -227,7 +226,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:rotationY="-83"
-        app:layout_constraintGuide_percent="0.75" />
+        app:layout_constraintGuide_percent="@dimen/customize_horizontal_guide_percent"
+        />
 
     <!--    &lt;!&ndash;    flNativeCollab&ndash;&gt;-->
         <FrameLayout

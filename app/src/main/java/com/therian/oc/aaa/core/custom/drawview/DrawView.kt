@@ -1010,7 +1010,7 @@ open class DrawView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
     }
 
     private fun setupDefaultIcons() {
-        val iconSize = resources.getDimensionPixelSize(R.dimen.dp_28)
+        val iconSize = resources.getDimensionPixelSize(R.dimen.dp_32)
         val deleteIcon = BitmapDrawIcon(
             ContextCompat.getDrawable(context, R.drawable.ic_close_view), DrawKey.RIGHT_TOP, iconSize
         )

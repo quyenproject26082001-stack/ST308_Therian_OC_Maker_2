@@ -88,7 +88,7 @@ class SuccessActivity : BaseActivity<ActivitySuccessBinding>() {
     override fun viewListener() {
         binding.apply {
             actionBar.apply {
-                btnActionBarNextRight.tap {
+                btnActionBarNextRight.tap(2000) {
 
                         viewModel.shareFiles(this@SuccessActivity)
 
@@ -141,8 +141,11 @@ class SuccessActivity : BaseActivity<ActivitySuccessBinding>() {
             btnActionBarRight.setImageResource(R.drawable.ic_home)
             tvCenter.visible()
             tvCenter.setText(R.string.successfully)
-            tvCenter.updateLayoutParams {
-
+            val titleMargin = resources.getDimensionPixelSize(R.dimen.dp_120)
+            tvCenter.updateLayoutParams<android.view.ViewGroup.MarginLayoutParams> {
+                width = 0
+                marginStart = titleMargin
+                marginEnd = titleMargin
             }
             imgCenter.gone()
                 setImageActionBar(btnActionBarNextRight, R.drawable.ic_share)

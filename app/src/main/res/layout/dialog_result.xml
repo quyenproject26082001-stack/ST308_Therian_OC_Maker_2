@@ -74,12 +74,12 @@
                 android:layout_height="@dimen/dp_184"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="@dimen/dp_3"
-
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/dp_76"
                 app:cardCornerRadius="@dimen/dp_12"
+                app:cardBackgroundColor="@color/white"
                 app:layout_constraintDimensionRatio="156:152"
                 app:strokeColor="@color/figma_primary"
                 app:strokeWidth="@dimen/dp_2">

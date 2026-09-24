@@ -16,8 +16,10 @@
         android:layout_height="match_parent"
         android:paddingHorizontal="@dimen/dp_16"
         android:clipChildren="true"
-        android:clipToPadding="true"
-        android:layout_marginTop="@dimen/dp_0"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/dp_54"
+        android:layout_marginBottom="@dimen/dp_70"
+        android:layout_marginTop="@dimen/dp_12"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         tools:listitem="@layout/item_my_album" />

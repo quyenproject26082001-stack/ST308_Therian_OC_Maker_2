@@ -768,12 +768,20 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
 
     private fun setupTypeNavigation(type: Int) {
         buttonNavigationList.forEachIndexed { index, button ->
-            val (res, status) = if (index == type) {
+            val isSelected = index == type
+            val (res, status) = if (isSelected) {
                 DataLocal.bottomNavigationSelected[index] to true
             } else {
                 DataLocal.bottomNavigationNotSelect[index] to false
             }
+            val buttonSize = resources.getDimensionPixelSize(
+                if (isSelected) R.dimen.dp_48 else R.dimen.dp_40
+            )
 
+            button.layoutParams = button.layoutParams.apply {
+                width = buttonSize
+                height = buttonSize
+            }
             button.setImageResource(res)
             layoutNavigationList[index].isVisible = status
         }

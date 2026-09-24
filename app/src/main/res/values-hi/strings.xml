@@ -87,7 +87,7 @@
     <string name="add_to_whatsapp">व्हाट्सएप में जोड़ें</string>
     <string name="add_to_telegram">टेलीग्राम में जोड़ें</string>
     <string name="my_avatar">मेरा अवतार</string>
-    <string name="my_design">मेरा डिज़ाइन</string>
+    <string name="my_design">िज़ाइन</string>
     <string name="my_album">मेरा एल्बम</string>
     <string name="no_app_found_to_handle_this_action">इस कार्रवाई को संभालने के लिए कोई ऐप नहीं मिला</string>
     <string name="invalid_action_msg">एप्लिकेशन इंस्टॉल नहीं है</string>
@@ -123,7 +123,7 @@
     <string name="creation">\u00A0\u00A0मेरी रचना\u00A0\u00A0</string>
     <string name="back">वापस</string>
     <string name="hello_world_hint">अपना कंटेंट टाइप करें...</string>
-    <string name="character">मेरा थेरियन</string>
+    <string name="character">मेरा</string>
     <string name="edit">संपादित करें</string>
     <string name="click_the_random_button_below_to_see_what_your_character_is">यह देखने के लिए कि आपका कैरेक्टर कैसा है, नीचे दिए गए रैंडम बटन पर क्लिक करें!</string>
     <string name="next_intro">अगला</string>

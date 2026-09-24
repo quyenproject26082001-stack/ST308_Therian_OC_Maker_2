@@ -20,13 +20,10 @@ import kotlinx.coroutines.flow.first
 import androidx.recyclerview.widget.RecyclerView
 import com.therian.oc.aaa.R
 import com.therian.oc.aaa.core.base.BaseFragment
-import com.therian.oc.aaa.core.extensions.gone
 import com.therian.oc.aaa.core.extensions.hideNavigation
-import com.therian.oc.aaa.core.extensions.invisible
 import com.therian.oc.aaa.core.extensions.select
 import com.therian.oc.aaa.core.extensions.showInterAll
 import com.therian.oc.aaa.core.extensions.tap
-import com.therian.oc.aaa.core.extensions.visible
 import com.therian.oc.aaa.core.helper.LanguageHelper
 import com.therian.oc.aaa.core.helper.MediaHelper
 import com.therian.oc.aaa.core.utils.key.IntentKey
@@ -76,8 +73,7 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
                         myAvatarAdapter.submitList(list)
                         binding.layoutNoItem.isVisible = list.isEmpty()
                         if (myCreationViewModel.typeStatus.value == ValueKey.AVATAR_TYPE) {
-                            if (list.isEmpty()) myAlbumActivity.binding.lnlBottom.gone()
-                            else myAlbumActivity.binding.lnlBottom.visible()
+                            myAlbumActivity.refreshBottomVisibility()
                         }
                     }
                 }
@@ -245,6 +241,7 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
     private fun handleLongClick(position: Int) {
         if (position >= viewModel.myAvatarList.value.size) return
         viewModel.showLongClick(position)
+        binding.rcvMyAvatar.clipToPadding = true
         myAlbumActivity.enterSelectionMode()
         // Enable select mode margins in adapter
         myAvatarAdapter.isSelectMode = true
@@ -292,6 +289,7 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
 
     fun resetSelectionMode() {
         viewModel.clearSelection()
+        binding.rcvMyAvatar.clipToPadding = false
         myAlbumActivity.exitSelectionMode()
         myAvatarAdapter.isSelectMode = false
         // No need to notify here - isSelectMode setter already handles it
@@ -299,6 +297,7 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
 
     fun getAllPaths(): ArrayList<String> {
         return viewModel.myAvatarList.value
+            .filterNot { it.isFake }
             .map { it.path }
             .toCollection(ArrayList())
     }
@@ -306,9 +305,7 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
     override fun onHiddenChanged(hidden: Boolean) {
         super.onHiddenChanged(hidden)
         if (!hidden) {
-            val isEmpty = viewModel.myAvatarList.value.isEmpty()
-            if (isEmpty) myAlbumActivity.binding.lnlBottom.gone()
-            else myAlbumActivity.binding.lnlBottom.visible()
+            myAlbumActivity.refreshBottomVisibility()
         }
     }
 

@@ -24,7 +24,7 @@
             app:cardBackgroundColor="@color/transparent"
             app:cardCornerRadius="@dimen/dp_4"
             app:cardElevation="@dimen/dp_0"
-            app:strokeColor="@color/app"
+            app:strokeColor="@color/figma_primary"
             app:strokeWidth="@dimen/dp_3"
 
             >
